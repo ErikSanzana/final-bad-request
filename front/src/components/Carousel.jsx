@@ -17,7 +17,7 @@ function Carousel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Cambia la velocidad del carrusel aquí
+    autoplaySpeed: 2000,
     pauseOnHover: true
   };
 
@@ -25,22 +25,22 @@ function Carousel() {
     <div className="carousel-container">
       <Slider {...settings}>
         <div>
-          <img src={img1} alt="Imagen 1" />
+          <img src={img1} alt="Imagen 1" className="carousel-image" />
         </div>
         <div>
-          <img src={img2} alt="Imagen 2" />
+          <img src={img2} alt="Imagen 2" className="carousel-image" />
         </div>
         <div>
-          <img src={img3} alt="Imagen 3" />
+          <img src={img3} alt="Imagen 3" className="carousel-image" />
         </div>
         <div>
-          <img src={img4} alt="Imagen 4" />
+          <img src={img4} alt="Imagen 4" className="carousel-image" />
         </div>
         <div>
-          <img src={img5} alt="Imagen 5" />
+          <img src={img5} alt="Imagen 5" className="carousel-image" />
         </div>
         <div>
-          <img src={img6} alt="Imagen 6" />
+          <img src={img6} alt="Imagen 6" className="carousel-image" />
         </div>
       </Slider>
     </div>
