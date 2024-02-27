@@ -7,3 +7,9 @@
 -agregado logo al footer
 -se agregan copyrigth
 -se agrega css especifico para footer
+
+
+-instalamos carousel para poder ocupar carousel
+-configuramos carousel
+-agregamos imagenes necesarias
+-aun no configuro css de el carousel

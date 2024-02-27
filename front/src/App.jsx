@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import Footer from './components/Footer';
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
       <div>
-        <h1>aca main</h1>
+      <Main/>
       </div>
       <Footer />
     </>
