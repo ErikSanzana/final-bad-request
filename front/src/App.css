@@ -38,3 +38,7 @@ p{
 }
 /* esto arregla el footeer al menos en caso de presentar problemas con parrafos especificar aca que solo aplique
 para footer */
+.carousel-image {
+  width: 100%; /* Define el ancho de la imagen */
+  height: auto; /* Mantiene la proporción de aspecto */
+}
