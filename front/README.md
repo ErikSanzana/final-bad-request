@@ -13,3 +13,22 @@
 -configuramos carousel
 -agregamos imagenes necesarias
 -aun no configuro css de el carousel
+
+-.env creado para la conexion a firebase 
+-avanzando npm install firebase (para instalar firebasehosting y pasar a deploys)
+-npm install -g firebase-tools
+
+  firebase login
+  firebase init{
+  ? Are you ready to proceed? Yes
+  ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Hosting: Configure files for Firebase Hosting and 
+(optionally) set up GitHub Action deploys
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: finalbadrequest (FinalBadRequest)
+? What do you want to use as your public directory? public
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
++  Wrote public/index.html
+  }
+  npm run primero  (compila)
+  npm run segundo (manda al hosting los cambios produccion)
