@@ -14,7 +14,6 @@
 -agregamos imagenes necesarias
 -aun no configuro css de el carousel
 
--.env creado para la conexion a firebase 
 -avanzando npm install firebase (para instalar firebasehosting y pasar a deploys)
 -npm install -g firebase-tools
 
