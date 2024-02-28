@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import data from "../../firebase.json"; {/* revisar de donde se obtienen los datos*/}
+/* import data from "../../firebase.json";  */
+{/* revisar de donde se obtienen los datos
+voy a agregar una imagen de referencia sólo para recordar que se debe generar un .json*/}
 
 const Gallery = ({products}) => {
     const [products, setProducts] = useState([]);
