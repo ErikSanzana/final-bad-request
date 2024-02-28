@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyCj6PpVjpD1yqvSZEEMIkkMMxKsIMs88t4",
   authDomain: "finalbadrequest.firebaseapp.com",
