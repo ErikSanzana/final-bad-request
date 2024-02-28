@@ -2,12 +2,12 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import img1 from '../img/jabon1.jpg';
-import img2 from '../img/jabon2.jpg';
-import img3 from '../img/jabon3.jpg';
-import img4 from '../img/jabon4.jpg';
-import img5 from '../img/jabon5.jpg';
-import img6 from '../img/jabon6.jpg';
+import img1 from '../assets/img/jabon1.jpg';
+import img2 from '../assets/img/jabon2.jpg';
+import img3 from '../assets/img/jabon3.jpg';
+import img4 from '../assets/img/jabon4.jpg';
+import img5 from '../assets/img/jabon5.jpg';
+import img6 from '../assets/img/jabon6.jpg';
 
 function Carousel() {
   const settings = {
