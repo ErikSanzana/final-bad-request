@@ -7,7 +7,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
 
-Esto es para joder el deploy de gerardo
+    Esto es para joder el deploy de gerardo 
+  
 
     {/* <Context> */}
        <App />
