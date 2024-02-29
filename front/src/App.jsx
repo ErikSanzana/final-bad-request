@@ -11,8 +11,7 @@ function App() {
 
   return (
     <>
-       
-      <Main/>
+
       <Footer />
 
       {/* <NavigationBar />
