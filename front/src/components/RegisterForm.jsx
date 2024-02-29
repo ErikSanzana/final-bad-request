@@ -16,6 +16,8 @@ function RegisterForm() {
     setValidated(true);
   };
 
+ 
+
   return (
     <div className="w-50 p-3 d-inline-flex justify-content-center align-content-center">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
