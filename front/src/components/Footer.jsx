@@ -11,7 +11,7 @@ function Footer() {
         <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
         <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
         <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-        <a href="#"><FontAwesomeIcon icon={faGithub} /></a> {/* Icono de GitHub */}
+        <a href="#"><FontAwesomeIcon icon={faGithub} /></a> 
       </div>
       <p>© 2024 FinalBadRequest. Todos los derechos reservados.</p>
     </footer>

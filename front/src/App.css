@@ -25,7 +25,7 @@ body {
 }
 
 .redes-sociales a {
-  font-size: 24px; /* Ajusta el tamaño de los iconos según sea necesario */
+  font-size: 20px; /* Ajusta el tamaño de los iconos según sea necesario */
   margin-right: 10px; /* Añade un margen derecho entre los iconos para separarlos */
 }
 /* En footer.css */

@@ -34,12 +34,12 @@ Erik{
             npm run segundo (manda al hosting los cambios produccion)
 
 }
-gerardo{
+Gerardo{
 
-- se crea la carpeta views
-  -se crea vista Home,heder
-  -se crea componente NAvbarapp,Header
-  -se configura Routes from "react-router-dom";
-  -se crea css del componente home ,se cambia de ubicacion
+            -se crea la carpeta views
+            -se crea vista Home,heder
+            -se crea componente NAvbarapp,Header
+            -se configura Routes from "react-router-dom";
+            -se crea css del componente home ,se cambia de ubicacion
 
 }
