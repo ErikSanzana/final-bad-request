@@ -1,15 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
-import logo from '../assets/img/logo.jpg'; // Importa la imagen de tu logo
 
 function Footer() {
   return (
     <footer className="footer">
       {/* Contenido del footer */}
-      <div className="logo-container">
-        <img src={logo} alt="Logo de FinalBadRequest" /> {/* No es necesario agregar estilos aquí */}
-      </div>
       <div className="redes-sociales">
         <p>Encuéntranos en redes sociales:</p>
         <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
