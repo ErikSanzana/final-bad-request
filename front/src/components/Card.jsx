@@ -12,6 +12,9 @@ const Card = ({product}) => {
             <div class="card-body1">
             <p class="card-text2">{product.price}</p>
             </div>
+            <div class="card-body1">
+            <p class="card-text2">{product.stock}</p>
+            </div>
         </div>
     )
 };

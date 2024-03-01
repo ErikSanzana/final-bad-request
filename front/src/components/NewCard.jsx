@@ -16,7 +16,11 @@ const NewCard = () => {
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">PRECIO</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inscribir valor del producto"/>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">DISPONIBLES</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Indicar cantidad disponible"/>
                 </div>
             </form>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
