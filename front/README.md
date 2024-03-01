@@ -46,4 +46,7 @@ Gerardo{
 
 Tansuani{
   -su crea nuevo componente NewCard
+  -01/03/2024 
+    -se agrega título a la CARD y NEWCARD
+    -se mmodifica formulario de card
 }
