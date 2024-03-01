@@ -1,3 +1,4 @@
+import React from 'react';
 const Card = ({product}) => {
     return (
         <div class="card" style="width: 100%">

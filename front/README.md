@@ -53,4 +53,5 @@ Tansuani{
     -agregué boton favoritos en card
     -se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
     -se crea la vista Admin, pero se rompe el código si la activo en app.jsx
+    -se agrega la URL del .json para completar la CARD, cómo poder probar si se generan las CARDS?
 }
