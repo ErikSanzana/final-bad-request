@@ -39,7 +39,7 @@ p{
 /* esto arregla el footeer al menos en caso de presentar problemas con parrafos especificar aca que solo aplique
 para footer */
 /* carousel.css */
-.carousel-image {
-  width: 35%; /* Establece el ancho al 100% del contenedor */
-  height: auto; /* Establece la altura automática para mantener la proporción */
-}
+/* .carousel-image {
+  width: 35%;
+  height: auto; 
+} */

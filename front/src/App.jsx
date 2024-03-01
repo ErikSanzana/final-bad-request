@@ -1,9 +1,10 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-// import { Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
 // import firebaseApp from "./components/Firebase.jsx";
+import Main from "./components/Main";
 import RegisterForm from "./components/RegisterForm.jsx";
+
+import Home from "./views/Home/home.jsx";
 
 
 function App() {
@@ -12,25 +13,25 @@ function App() {
   return (
     <>
 
-      <Footer />
-
-      {/* <NavigationBar />
+   
+       {/* <NavigationBar /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Profile />} />
-        <Route path="/pizza/:id" element={<LogIn />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/store" element={<Store />} />
-        <Route
+        {/* <Route path="/menu" element={<Profile />} /> */}
+        {/* <Route path="/pizza/:id" element={<LogIn />} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
+        {/* <Route path="/store" element={<Store />} /> */}
+        {/* <Route
           path="/product/:id"
           element={<StorePeroParaElDetalleDeProductosDeLaBaseDeDatos />}
-        />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cart" element={<Cart />} />
+        /> */}
+        {/* <Route path="/favorites" element={<Favorites />} /> */}
+        {/* <Route path="/cart" element={<Cart />} /> */}
 
-        <Route path="*" element={<NotFound />} />
-      </Routes> */}
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes> 
+    
     </>
   );
 }
