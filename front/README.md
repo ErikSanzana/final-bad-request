@@ -52,4 +52,5 @@ Tansuani{
     -agregué botones agregar y borrar en newcard
     -agregué boton favoritos en card
     -se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
+    -se crea la vista Admin, pero se rompe el código si la activo en app.jsx
 }
