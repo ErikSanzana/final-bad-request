@@ -19,6 +19,14 @@ const NewCard = () => {
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
                 </div>
             </form>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked/> AGREGAR
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"/> BORRAR
+            </label>
+            </div>
         </div>
     )
 };

@@ -1,6 +1,9 @@
 const Card = ({product}) => {
     return (
         <div class="card" style="width: 100%">
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="LIKE ME">
+            Agregame a tus FAVORITOS
+            </button>
             <h5 class="card-title">{product.title}</h5>
             <img src={product.image} class="card-img-top" alt={product.title}/> 
             <div class="card-body">
