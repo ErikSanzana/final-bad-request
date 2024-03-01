@@ -49,4 +49,7 @@ Tansuani{
   -01/03/2024 
     -se agrega título a la CARD y NEWCARD
     -se mmodifica formulario de card
+    -agregué botones agregar y borrar en newcard
+    -agregué boton favoritos en card
+    -se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
 }

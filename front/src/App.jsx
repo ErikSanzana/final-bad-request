@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import RegisterForm from "./components/RegisterForm.jsx";
 
 import Home from "./views/Home/home.jsx";
+//import Favoritos from "./views/Home/Favoritos.jsx"
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        {/*<Route path="/favoritos" element={<Favoritos />} />*/}
+        
         {/* <Route path="/menu" element={<Profile />} /> */}
         {/* <Route path="/pizza/:id" element={<LogIn />} /> */}
         {/* <Route path="/register" element={<Register />} /> */}
