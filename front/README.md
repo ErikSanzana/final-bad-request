@@ -43,3 +43,7 @@ Gerardo{
             -se crea css del componente home ,se cambia de ubicacion
 
 }
+
+Tansuani{
+  -su crea nuevo componente NewCard
+}
