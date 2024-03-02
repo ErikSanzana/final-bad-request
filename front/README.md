@@ -65,6 +65,8 @@ Tansuani{
 
 
 nacho{
-  - holi
-  - 02-03 : register and log in components + views 
+
+           -holi
+           -02-03 : register and log in components + views 
+
 }
