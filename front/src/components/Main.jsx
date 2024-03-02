@@ -1,7 +1,7 @@
 // import React from 'react';
 import Carousel from './Carousel'; // Importa el componente del carrusel
 
-import RegisterForm from "./RegisterForm";
+//import RegisterForm from "./RegisterForm";
 
 function Main() {
   return (

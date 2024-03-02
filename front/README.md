@@ -54,4 +54,6 @@ Tansuani{
     -se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
     -se crea la vista Admin, pero se rompe el código si la activo en app.jsx
     -se agrega la URL del .json para completar la CARD, cómo poder probar si se generan las CARDS?
+    -se crea carpeta de Admin y Favoritos con su respectivo jsx y css
+    se reubica home dentro de views
 }

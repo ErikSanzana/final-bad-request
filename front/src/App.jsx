@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 //import firebaseApp from "./components/Firebase.jsx";
-//import Main from "./components/Main";
+//import Main from "./components/Main.jsx";
 //import RegisterForm from "./components/RegisterForm.jsx";
+//import Card from "./components/Card.jsx";
 
 import Home from "./views/Home/home.jsx";
-//import Card from "./components/Card.jsx";
-//import Favoritos from "./views/Home/Favoritos.jsx";
-//import Admin from "./views/Home/Admin.jsx";
+//import Favoritos from "./views/Favoritos/Favoritos.jsx";
+//import Admin from "./views/Admin/Admin.jsx";
 
 
 function App() {
