@@ -1,12 +1,23 @@
 .imgNabar {
-  width: 10%;
+  width: 15%;
 }
 
 .navbar-nav {
-    align-items: center;;
+  align-items: center;
 }
 
 .carousel-image {
   width: 35%;
-  height: auto; 
+  height: auto;
+}
+.loginNavar {
+  display: flex;
+  width: 30rem;
+}
+.divCart {
+  margin-right: 3rem;
+}
+.me-2 {
+  width: 200px;
+  margin-right: 10px;
 }

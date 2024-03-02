@@ -42,7 +42,8 @@ Gerardo{
             -se configura Routes from "react-router-dom";
             -se crea css del componente home ,se cambia de ubicacion
             -Se agrega campo buqueda
-
+            -Se agrega link Login/registro
+            -Se agregar campo de busqueda y su botton
 }
 
 Tansuani{
