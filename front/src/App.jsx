@@ -6,6 +6,9 @@ import "./App.css";
 //import Card from "./components/Card.jsx";
 
 import Home from "./views/Home/home.jsx";
+import RegisterView from "./views/Register/RegisterView.jsx";
+import LogInView from "./views/LogIn/LogInView.jsx";
+
 //import Favoritos from "./views/Favoritos/Favoritos.jsx";
 //import Admin from "./views/Admin/Admin.jsx";
 
@@ -26,13 +29,10 @@ function App() {
         {/*<Route path="/administrador" element={<Admin />} />*/}
         
         {/* <Route path="/menu" element={<Profile />} /> */}
-        {/* <Route path="/pizza/:id" element={<LogIn />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/enter" element={<LogInView />} />
+        <Route path="/register" element={<RegisterView />} />
         {/* <Route path="/store" element={<Store />} /> */}
-        {/* <Route
-          path="/product/:id"
-          element={<StorePeroParaElDetalleDeProductosDeLaBaseDeDatos />}
-        /> */}
+        {/* <Route path="/product/:id" element={<StorePeroParaElDetalleDeProductosDeLaBaseDeDatos />}/> */}
         {/* <Route path="/favorites" element={<Favorites />} /> */}
         {/* <Route path="/cart" element={<Cart />} /> */}
 

@@ -61,3 +61,10 @@ Tansuani{
 -sólo maquillaje
 -sigo intentando hacer q funcione las vistas sin éxito
 }
+
+
+
+nacho{
+  - holi
+  - 02-03 : register and log in components + views 
+}

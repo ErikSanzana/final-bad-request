@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import imgNabar from "../assets/img/logo.jpg";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import RegisterView from "../views/Register/RegisterView";
+
 const Navbarapp = () => {
   const setActiveClass = ({ isActive }) =>
     isActive
