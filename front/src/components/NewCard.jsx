@@ -1,7 +1,11 @@
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 const NewCard = () => {
     return (
         <div class="card" style="width: 100%">
-            <form>
+            <Form>
                 <div class="form-group">
                     <label for="formGroupExampleInput">TITULO</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inscriba el título del producto"/>
@@ -22,7 +26,8 @@ const NewCard = () => {
                     <label for="formGroupExampleInput2">DISPONIBLES</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Indicar cantidad disponible"/>
                 </div>
-            </form>
+            </Form>
+            <Button>
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
                 <input type="radio" name="options" id="option1" autocomplete="off" checked/> AGREGAR
@@ -31,6 +36,7 @@ const NewCard = () => {
                 <input type="radio" name="options" id="option2" autocomplete="off"/> BORRAR
             </label>
             </div>
+            </Button>
         </div>
     )
 };
