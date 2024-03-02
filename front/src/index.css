@@ -67,11 +67,15 @@ button:focus-visible {
   }
 }
 
-div.card {
+.carousel-container {
   background-image: url('./assets/img/fondocardback.jpg');
   background-size: cover; 
   background-position: center;
-  align-items: center;
-  border: 0;
+  background-attachment: fixed; /* Esto hará que el fondo sea fijo */
 }
 
+.card {
+  /* Asegúrate de que el contenido dentro de la tarjeta no afecte al fondo */
+  background-color: transparent; 
+  align-items: center;/* Ajusta el color de fondo según sea necesario */
+}
