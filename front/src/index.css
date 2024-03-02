@@ -67,8 +67,11 @@ button:focus-visible {
   }
 }
 
-div.card{
-  background-color:#56682D;
+div.card {
+  background-image: url('./assets/img/fondocardback.jpg');
+  background-size: cover; 
+  background-position: center;
   align-items: center;
-  border:0;
+  border: 0;
 }
+
