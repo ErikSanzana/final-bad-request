@@ -48,7 +48,7 @@ Gerardo{
 
 Tansuani{
 -su crea nuevo componente NewCard
--01/03/2024
+01/03/2024
 -se agrega título a la CARD y NEWCARD
 -se mmodifica formulario de card
 -agregué botones agregar y borrar en newcard
@@ -57,5 +57,17 @@ Tansuani{
 -se crea la vista Admin, pero se rompe el código si la activo en app.jsx
 -se agrega la URL del .json para completar la CARD, cómo poder probar si se generan las CARDS?
 -se crea carpeta de Admin y Favoritos con su respectivo jsx y css
-se reubica home dentro de views
+-se reubica home dentro de views
+02/03/2024
+-sólo maquillaje
+-sigo intentando hacer q funcione las vistas sin éxito
+}
+
+
+
+nacho{
+
+           -holi
+           -02-03 : register and log in components + views 
+
 }

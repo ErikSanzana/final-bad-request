@@ -3,8 +3,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import imgNabar from "../assets/img/logo.webp";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import RegisterView from "../views/Register/RegisterView";
 
 const Navbarapp = () => {
   const setActiveClass = ({ isActive }) =>
