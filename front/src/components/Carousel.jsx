@@ -3,11 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import img1 from '../assets/img/jabon1.jpg';
-import img2 from '../assets/img/jabon2.jpg';
+/* import img2 from '../assets/img/jabon2.jpg';
 import img3 from '../assets/img/jabon3.jpg';
 import img4 from '../assets/img/jabon4.jpg';
 import img5 from '../assets/img/jabon5.jpg';
-import img6 from '../assets/img/jabon6.jpg';
+import img6 from '../assets/img/jabon6.jpg'; */
 
 function Carousel() {
   const settings = {
@@ -27,7 +27,7 @@ function Carousel() {
         <div>
           <img src={img1} alt="Imagen 1" className="carousel-image" />
         </div>
-        <div>
+{/*         <div>
           <img src={img2} alt="Imagen 2" className="carousel-image" />
         </div>
         <div>
@@ -41,7 +41,7 @@ function Carousel() {
         </div>
         <div>
           <img src={img6} alt="Imagen 6" className="carousel-image" />
-        </div>
+        </div> */}
       </Slider>
     </div>
   );
