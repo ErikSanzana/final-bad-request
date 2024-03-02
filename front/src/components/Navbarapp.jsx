@@ -3,8 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import imgNabar from "../assets/img/logo.webp";
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import RegisterView from "../views/Register/RegisterView";
 
 const Navbarapp = () => {
@@ -29,8 +29,13 @@ const Navbarapp = () => {
               <div>{/* Contenido del enlace al carrito */}</div>
             </NavLink>
             <div className="loginNavar">
-              <NavLink to="/login" className={setActiveClass}>
-                <div>Login/registro</div>
+              
+              <NavLink to="/enter" className={setActiveClass}>
+                <div>Login</div>
+              </NavLink>
+
+              <NavLink to="/register" className={setActiveClass}>
+                <div>/Registro</div>
               </NavLink>
             </div>
             <div>
