@@ -41,19 +41,20 @@ Gerardo{
             -se crea componente NAvbarapp,Header
             -se configura Routes from "react-router-dom";
             -se crea css del componente home ,se cambia de ubicacion
+            -Se agrega campo buqueda
 
 }
 
 Tansuani{
-  -su crea nuevo componente NewCard
-  -01/03/2024 
-    -se agrega título a la CARD y NEWCARD
-    -se mmodifica formulario de card
-    -agregué botones agregar y borrar en newcard
-    -agregué boton favoritos en card
-    -se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
-    -se crea la vista Admin, pero se rompe el código si la activo en app.jsx
-    -se agrega la URL del .json para completar la CARD, cómo poder probar si se generan las CARDS?
-    -se crea carpeta de Admin y Favoritos con su respectivo jsx y css
-    se reubica home dentro de views
+-su crea nuevo componente NewCard
+-01/03/2024
+-se agrega título a la CARD y NEWCARD
+-se mmodifica formulario de card
+-agregué botones agregar y borrar en newcard
+-agregué boton favoritos en card
+-se crea la vista Favoritos, pero se rompe el código si la activo en app.jsx
+-se crea la vista Admin, pero se rompe el código si la activo en app.jsx
+-se agrega la URL del .json para completar la CARD, cómo poder probar si se generan las CARDS?
+-se crea carpeta de Admin y Favoritos con su respectivo jsx y css
+se reubica home dentro de views
 }
