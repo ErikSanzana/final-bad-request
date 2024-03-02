@@ -43,3 +43,7 @@ para footer */
   width: 35%;
   height: auto; 
 } */
+.product-image {
+  width: 100vh;
+  height: 100vh;
+}

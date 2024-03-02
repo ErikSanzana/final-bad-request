@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick-theme.css';// Importa tu archivo de estilos aquí si es necesario
 import ProductCard from './ProductCard'; // Asegúrate de tener la ruta correcta
 
 function Carousel() {
@@ -33,7 +33,7 @@ function Carousel() {
     <div className="carousel-container">
       <Slider {...settings}>
         {products.map(product => (
-          <div key={product.id}>
+          <div key={product.id} className="center-image">
             <ProductCard product={product} />
           </div>
         ))}
