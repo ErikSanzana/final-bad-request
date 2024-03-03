@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 //import firebaseApp from "./components/Firebase.jsx";
 
-import Home from "./views/Home/Home.jsx";
+import Home from "./views/Home/home.jsx";
 import RegisterView from "./views/Register/RegisterView.jsx";
 import LogInView from "./views/LogIn/LogInView.jsx";
 import Navbarapp from "./components/Navbarapp.jsx";

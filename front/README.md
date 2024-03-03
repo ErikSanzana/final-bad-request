@@ -61,6 +61,8 @@ Tansuani{
 02/03/2024
 -sólo maquillaje
 -sigo intentando hacer q funcione las vistas sin éxito
+03/03/2024
+-se corrige de h a H en la dirección en app.jsx para acceder a views home
 }
 
 
