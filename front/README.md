@@ -68,6 +68,7 @@ Tansuani{
 -se elimina componente Gallery
 -se elimina componente NewCard
 -de la carpeta "public" se elimina "vite.svg"
+-se corrige CSS de home para igualar tamaño de imagenes en tienda, favoritos y carro. Pendiente carusel.
 }
 
 

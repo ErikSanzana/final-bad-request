@@ -41,23 +41,7 @@ const SoapProvider = ({ children }) => {
   useEffect(() => {
     getAxios();
   }, []);
-
-    
-//   const billingPizzas = () => {
-//     const sum = pizzaMenu
-//       .filter((f) => f.add == true)
-//       .map((m) => {
-//         return { total: Number(m.amount * m.price) };
-//       })
-//       .reduce((a, total) => a + total.total, 0);
-
-//     setTotalBilling(sum);
-//   };
-//   useEffect(() => {
-//     billingPizzas();
-//   });
-    
-    
+   
     
   return (
     <SoapContext.Provider
