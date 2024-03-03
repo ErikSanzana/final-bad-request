@@ -68,6 +68,12 @@ Tansuani{
 nacho{
 
            -holi
-           -02-03 : register and log in components + views 
+           -02-03 : - register and log in components + views 
+           -03-03 : - añadidas varias visatas, falta aun usuario y administrador (vistas) no se calienten la cabeza por la funcionalidad con backend.. solo usar ejemplos
+                    - modifique unas cartas para ponerlas y reutilziarlas, son reusables para todas las visatas, vean como se ve, ya que en el carrusel se ve extraño, estube viendo que es por las iamgines ( se deberia usar imagenes del mismo tamaño para estandarizar todo).
+                    - las imagenes se pueden standarizar a la mala por css
+                    - tbn tienen la funcionalidad lista de favoritos y carrito, faltaria agragar la matematica del asunto (Que lo tengo en otro proyecto despues lo veo)
+                    - context andando y alimentando a las cartas segun donde se ocupen.
+                  
 
 }
