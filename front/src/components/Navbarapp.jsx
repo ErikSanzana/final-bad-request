@@ -16,20 +16,18 @@ const Navbarapp = () => {
     <>
       <Navbar expand="lg" className="bg-dark ">
         <Container>
-          <Navbar.Brand
-            href="#home"
-            className="text-white d-flex align-items-center"
-          >
-            <img src={imgNabar} className="imgNabar" alt="xxx" />
-            <p className="titleNavbar ms-2 mb-0"> JABONESVEGAN</p>
-          </Navbar.Brand>
-          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+          <NavLink to="/">
+            <div className="text-white d-flex align-items-center">
+              <img src={imgNabar} className="imgNabar" alt="xxx" />
+              <p className="titleNavbar ms-2 mb-0"> JABONESVEGAN</p>
+            </div>
+          </NavLink>
+
           <Nav>
             <NavLink to="/Cart" className={setActiveClass}>
               <div>{/* Contenido del enlace al carrito */}</div>
             </NavLink>
             <div className="loginNavar">
-              
               <NavLink to="/enter" className={setActiveClass}>
                 <div>Login</div>
               </NavLink>

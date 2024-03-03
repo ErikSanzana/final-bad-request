@@ -8,6 +8,8 @@ import "./App.css";
 import Home from "./views/Home/home.jsx";
 import RegisterView from "./views/Register/RegisterView.jsx";
 import LogInView from "./views/LogIn/LogInView.jsx";
+import Navbarapp from "./components/Navbarapp.jsx";
+import Footer from "./components/Footer.jsx";
 
 //import Favoritos from "./views/Favoritos/Favoritos.jsx";
 //import Admin from "./views/Admin/Admin.jsx";
@@ -20,7 +22,7 @@ function App() {
   return (
     <>
 
-   
+<Navbarapp />
        {/* <NavigationBar /> */}
 
       <Routes>
@@ -38,7 +40,7 @@ function App() {
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes> 
-    
+      <Footer />
     </>
   );
 }
