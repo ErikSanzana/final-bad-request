@@ -1,6 +1,5 @@
-import Navbarapp from "../../components/Navbarapp";
+
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import Carrucel from "../../components/Carousel";
 
 const Home = () => {

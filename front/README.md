@@ -61,8 +61,13 @@ Tansuani{
 02/03/2024
 -sólo maquillaje
 -sigo intentando hacer q funcione las vistas sin éxito
-03/03/2024
+03/03/2024 limpieza del código
 -se corrige de h a H en la dirección en app.jsx para acceder a views home
+-Corregí mensaje en "Errors"
+-en la vista home se elimina import "footer" y "navbar"
+-se elimina componente Gallery
+-se elimina componente NewCard
+-de la carpeta "public" se elimina "vite.svg"
 }
 
 

@@ -5,8 +5,7 @@ const NotFound = () => {
   
     return (
       <div className="p-3 d-flex justify-content-center">
-            No hay nada pa vo aca 
-            si con flaiteza jabonera de jabones 
+            NOTHING TO SEE HERE 
 
       </div>
     );
