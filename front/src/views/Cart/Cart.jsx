@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { SoapContext } from "../../context/context";
 import CardProduct from "../../components/CardProducts";
 
-const Favoritos = () => {
+const ShoppingCart = () => {
 
   const { products } = useContext(SoapContext);
 
@@ -10,7 +10,7 @@ const Favoritos = () => {
   return (
     <div className="p-3 d-flex justify-content-center">
       {products
-            .filter((product) => (product.fav == true))
+            .filter((product) => (product.add == true))
             .map((product) => (
         <CardProduct
           descripcion={product.descripcion}
@@ -30,4 +30,4 @@ const Favoritos = () => {
 };
 
 
-export default Favoritos;
+export default ShoppingCart;

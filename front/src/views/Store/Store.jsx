@@ -2,17 +2,13 @@ import { useContext } from "react";
 import { SoapContext } from "../../context/context";
 import CardProduct from "../../components/CardProducts";
 
-const Favoritos = () => {
-
+export const StoreView = () => {
   const { products } = useContext(SoapContext);
-
-
   return (
-    <div className="p-3 d-flex justify-content-center">
-      {products
-            .filter((product) => (product.fav == true))
-            .map((product) => (
+    <div className="p-3 m-3 d-flex justify-content-between ">
+      {products.map((product) => (
         <CardProduct
+          key={product.id}
           descripcion={product.descripcion}
           id={product.id}
           stock={product.stock}
@@ -29,5 +25,4 @@ const Favoritos = () => {
   );
 };
 
-
-export default Favoritos;
+export default StoreView;

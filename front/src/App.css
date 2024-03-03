@@ -47,3 +47,25 @@ para footer */
   width: 90vh;
   height: 70vh;
 }
+
+.navBarImg{
+  max-width: 10%;
+  height: auto;
+}
+
+.customNav{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.linkers{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3rem;
+
+}
+.linkers > a > div:hover {
+color: #157b32;
+}

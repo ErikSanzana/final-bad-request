@@ -72,6 +72,7 @@ button:focus-visible {
   background-size: cover; 
   background-position: center;
   background-attachment: fixed; /* Esto hará que el fondo sea fijo */
+  
 }
 
 .card {
