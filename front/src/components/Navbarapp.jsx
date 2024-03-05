@@ -6,7 +6,12 @@ import imgNabar from "../assets/img/logo.webp";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import { useContext } from "react";
+import { SoapContext } from "../context/context";
+
 const Navbarapp = () => {
+  const { totalProducts } = useContext(SoapContext);
+
   const setActiveClass = ({ isActive }) =>
     isActive
       ? "text-warning mt-2 pe-2 text-decoration-none"
@@ -19,23 +24,21 @@ const Navbarapp = () => {
           <p className="titleNavbar  text-white"> JABONESVEGAN</p>
         </NavLink>
         <div className="linkers">
+          <NavLink to="/store" className={setActiveClass}>
+            <div>Tienda</div>
+          </NavLink>
 
-        <NavLink to="/store" className={setActiveClass}>
-          <div>Tienda</div>
-        </NavLink>
+          <NavLink to="/favoritos" className={setActiveClass}>
+            <div>Favoritos</div>
+          </NavLink>
 
-        <NavLink to="/favoritos" className={setActiveClass}>
-          <div>Favoritos</div>
-        </NavLink>
+          <NavLink to="/login" className={setActiveClass}>
+            <div>Login</div>
+          </NavLink>
 
-        <NavLink to="/login" className={setActiveClass}>
-          <div>Login</div>
-        </NavLink>
-
-        <NavLink to="/register" className={setActiveClass}>
-          <div>Registro</div>
-        </NavLink>
-
+          <NavLink to="/register" className={setActiveClass}>
+            <div>Registro</div>
+          </NavLink>
         </div>
         <div>
           <Form className="d-flex">
@@ -54,7 +57,18 @@ const Navbarapp = () => {
 
         <NavLink to="/cart" className={setActiveClass}>
           <div className="divCart">
-            <h3>🛒Monto:$$$</h3>
+            {totalProducts ? (
+              <span>
+                {" "}
+                🛒Monto:
+                {Intl.NumberFormat("es-CL", {
+                  style: "currency",
+                  currency: "CLP"
+                }).format(Number(totalProducts))}
+              </span>
+            ) : (
+              <span>Esperamos tu pedido</span>
+            )}
           </div>
         </NavLink>
       </Nav>

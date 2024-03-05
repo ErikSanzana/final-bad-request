@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
+import { confirmBuy, forOrder, addUnit, lessUnit } from "./utils/utils";
 
 // usar solo 1 carta para standarizar y reutilizar componentes.
 
@@ -38,8 +39,7 @@ const CardProduct = ({
       });
       return toBuy;
     });
-
-    //swal aca?
+    forOrder();
   };
 
   const addToFav = (id) => {
@@ -59,10 +59,39 @@ const CardProduct = ({
     //   swal aca
   };
 
+  const moreProduct = (id) => {
+    setProducts((plusProduct) => {
+      const addProduct = plusProduct.map((add) => {
+        if (add.id == id) {
+          return { ...add, amount: Number(add.amount + 1) };
+        } else {
+          return add;
+        }
+      });
+      return addProduct;
+    });
+
+    addUnit();
+  };
+
+  const lessProducts = (id) => {
+    setProducts((minusProduct) => {
+      const substractProduct = minusProduct.map((substract) => {
+        if (substract.id == id && substract.amount > 0) {
+          return { ...substract, amount: Number(substract.amount - 1) };
+        } else {
+          return substract;
+        }
+      });
+      return substractProduct;
+    });
+    lessUnit();
+  };
+
   const removeFromCart = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
-        if (product.id === id) {
+        if (product.id === id && product.amount == 0 ) {
           return {
             ...product,
             add: false,
@@ -118,6 +147,31 @@ const CardProduct = ({
                   <Button variant="primary" onClick={() => removeFromCart(id)}>
                     Eliminar
                   </Button>
+                </div>
+              )}
+
+              {/* añadir unidades al carro, visible solo si se añadio algo previamente (se puede condicionar a otra cosa para que no aparezca a cada rato... o dejarlo bonito? ) */}
+
+              {!add ? null : (
+                <div className="customAddMinus">
+                  <p>Cantidad:</p>
+                  <div className="customContainerCard">
+                    <button
+                      className="success"
+                      onClick={() => {
+                        lessProducts(id);
+                        removeFromCart(id);
+                      }}
+                    >
+                      -
+                    </button>
+
+                    <p className="textAmount">{amount}</p>
+
+                    <button className="success" onClick={() => moreProduct(id)}>
+                      +
+                    </button>
+                  </div>
                 </div>
               )}
 

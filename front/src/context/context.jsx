@@ -7,9 +7,6 @@ const SoapProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState();
 
-
-
-
   const getAxios = () => {
     try {
       axios
@@ -19,6 +16,7 @@ const SoapProvider = ({ children }) => {
         .then((response) => {
           // console.table(response.data);
           // OJO!!!! add, detail, amount y Fav son para el carro de compras y para favoritos
+          //manejar amount segun stock (añadir logica si stock = 0 no comprar)
           setProducts(
             response.data.map((obj) => ({
               ...obj,
@@ -37,20 +35,32 @@ const SoapProvider = ({ children }) => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     getAxios();
   }, []);
-   
-    
+
+  const totalCart = () => {
+    const sum = products
+      .filter((f) => f.add == true)
+      .map((m) => {
+        return { total: Number(m.amount * m.valor) };
+      })
+      .reduce((a, total) => a + total.total, 0);
+
+    setTotalProducts(sum);
+  };
+  useEffect(() => {
+    totalCart();
+  },);
+
+
   return (
     <SoapContext.Provider
       value={{
         products,
         setProducts,
         totalProducts,
-        setTotalProducts,
-
+        setTotalProducts
       }}
     >
       {children}

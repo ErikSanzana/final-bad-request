@@ -9,7 +9,6 @@ export const StoreView = () => {
       {products.map((product) => (
         <CardProduct
           key={product.id}
-          descripcion={product.descripcion}
           id={product.id}
           stock={product.stock}
           title={product.title}
