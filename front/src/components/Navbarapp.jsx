@@ -28,17 +28,17 @@ const Navbarapp = () => {
             <div>Tienda</div>
           </NavLink>
 
-          <NavLink to="/favoritos" className={setActiveClass}>
+          {/* <NavLink to="/favoritos" className={setActiveClass}>
             <div>Favoritos</div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink to="/login" className={setActiveClass}>
+          {/* <NavLink to="/login" className={setActiveClass}>
             <div>Login</div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink to="/register" className={setActiveClass}>
+          {/* <NavLink to="/register" className={setActiveClass}>
             <div>Registro</div>
-          </NavLink>
+          </NavLink> */}
         </div>
         <div>
           <Form className="d-flex">
@@ -55,6 +55,7 @@ const Navbarapp = () => {
           <Button variant="outline-success">Search</Button>
         </div>
 
+        {/* añadir un if logedin entonces que envie al carro de compras, de otra forma que solo se vea algun mensaje o nada */}
         <NavLink to="/cart" className={setActiveClass}>
           <div className="divCart">
             {totalProducts ? (

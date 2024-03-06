@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
-import { confirmBuy, forOrder, addUnit, lessUnit } from "./utils/utils";
+import { forOrder, addUnit, lessUnit } from "./helpers/Alerts.jsx";
 
-// usar solo 1 carta para standarizar y reutilizar componentes.
+// se usa solo 1 carta para standarizar y reutilizar componentes.
 
 const CardProduct = ({
   descripcion,
@@ -56,7 +56,7 @@ const CardProduct = ({
       });
       return toFav;
     });
-    //   swal aca
+
   };
 
   const moreProduct = (id) => {
@@ -91,7 +91,7 @@ const CardProduct = ({
   const removeFromCart = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
-        if (product.id === id && product.amount == 0 ) {
+        if (product.id === id || product.amount == 0) {
           return {
             ...product,
             add: false,

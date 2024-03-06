@@ -1,10 +1,9 @@
 // funciones de swal (que se llaman) y otras que se llaman
 import Swal from "sweetalert2";
-export { confirmBuy, forOrder, addUnit, lessUnit };
 
 const confirmBuy = () => {
   Swal.fire({
-    timer: "2000",
+    timer: "5000",
     timerProgressBar: true,
     color: "#dfded6",
     icon: "warning",
@@ -55,19 +54,24 @@ const addUnit = () => {
 };
 
 const lessUnit = () => {
-     //copiada y pegada, ajustar
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-      });
-      Toast.fire({
-        title: "le bajaste 1 al carro wey",
-        color: "#00000",
-        customClass: {
-          popup: "CustomPopUpCss",
-        },
-      });
-}
+  //copiada y pegada, ajustar
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  });
+  Toast.fire({
+    title: "le bajaste 1 al carro wey",
+    color: "#00000",
+    customClass: {
+      popup: "CustomPopUpCss",
+    },
+  });
+};
+
+
+
+
+export { confirmBuy, forOrder, addUnit, lessUnit };

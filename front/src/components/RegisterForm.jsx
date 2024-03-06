@@ -35,14 +35,19 @@ const RegisterForm = () => {
     "skin care"
   ];
 
-  const { register, handleSubmit, formState: { errors }  } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
+
   const send = (data) => {
     Object.keys(data).forEach((key) => {
-      if (typeof data[key] === 'string') {
+      if (typeof data[key] === "string") {
         data[key] = data[key].trim();
       }
     });
-  
+
     console.log(data);
     //add post method
   };
@@ -209,8 +214,7 @@ const RegisterForm = () => {
             feedback="You must agree before submitting."
             feedbackType="invalid"
             {...register("agreeToTerms", { required: true })}
-             isInvalid={!!errors.agreeToTerms}
-            
+            isInvalid={!!errors.agreeToTerms}
           />
         </Form.Group>
 
