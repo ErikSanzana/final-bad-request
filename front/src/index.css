@@ -31,19 +31,15 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px ;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 10px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #e8cfcf;
+  width: 150px;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -71,6 +67,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.button1 {
+  margin: 2px;
+}
 
 .carousel-container {
   background-image: url('./assets/img/fondocardback.jpg');
@@ -87,12 +86,15 @@ button:focus-visible {
   /* Ajusta el color de fondo según sea necesario */
   margin-top: 5px;
 }
-.button1 {
-  margin: 2px;
-}
+
 
 .formlog {
   width: 400px;
   height: 300px;
   margin-top: 20px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }

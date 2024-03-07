@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 import { useContext } from "react";
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
-import { confirmBuy, forOrder, addUnit, lessUnit } from "./utils/utils";
+import { forOrder, addUnit, lessUnit } from "./utils/utils";
 
-// se usa solo 1 carta para standarizar y reutilizar componentes.
+// usar solo 1 carta para standarizar y reutilizar componentes.
 
 const CardProduct = ({
   // eslint-disable-next-line react/prop-types
@@ -62,7 +62,7 @@ const CardProduct = ({
       });
       return toFav;
     });
-
+    //   swal aca
   };
 
   const moreProduct = (id) => {
@@ -99,7 +99,7 @@ const CardProduct = ({
   const removeFromCart = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
-        if (product.id === id || product.amount == 0) {
+        if (product.id === id && product.amount == 0 ) {
           return {
             ...product,
             add: false,
@@ -124,15 +124,14 @@ const CardProduct = ({
 
           {title && (
             <div>
-              <IconHeart filled={fav} />
-
+              <IconHeart filled={fav}/>
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}
               {stock ? (
                 <div>
-                  <span> Stock:{stock}</span>
+                  <span> Stock:{stock}&nbsp;</span>
                   <span>
                     {" "}
-                    Valor:
+                    &nbsp;&nbsp;&nbsp;&nbsp; Valor:
                     {Intl.NumberFormat("es-CL", {
                       style: "currency",
                       currency: "CLP"

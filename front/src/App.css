@@ -6,13 +6,19 @@
   height: 100%;
   text-align: center;
   background-color: rgb(244, 242, 216);
-  
-}
+  }
 body {
   margin: 10px;
   padding: 10px;
   min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana gráfica */
   position: relative; /* Asegura que el footer se posicione correctamente */
+}
+.customNav{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgb(74, 152, 71);
 }
 
 .footer {
@@ -24,45 +30,6 @@ body {
   text-align: center;
   padding: 10px 0;
 }
-
-.redes-sociales a {
-  color: #f5e8e8;
-  font-size: 20px; /* Ajusta el tamaño de los iconos según sea necesario */
-  margin-right: 10px; /* Añade un margen derecho entre los iconos para separarlos */
-}
-/* En footer.css */
-.logo-container img {
-  width: 100px; /* Ajusta el tamaño del logo según sea necesario */
-  height: auto; /* Para mantener la proporción de aspecto */
-}
-p{
-  margin: 0;
-}
-/* esto arregla el footeer al menos en caso de presentar problemas con parrafos especificar aca que solo aplique
-para footer */
-/* carousel.css */
-/* .carousel-image {
-  width: 35%;
-  height: auto; 
-} */
-.product-image {
-  width: 90vh;
-  height: 70vh;
-}
-
-.navBarImg{
-  max-width: 10%;
-  height: auto;
-}
-
-.customNav{
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: rgb(74, 152, 71);
-}
-
 .linkers{
   display: flex;
   flex-wrap: nowrap;
@@ -72,3 +39,37 @@ para footer */
 .linkers > a > div:hover {
 color: #0f471f;
 }
+/* En footer.css */
+.logo-container img {
+  width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+  height: auto; /* Para mantener la proporción de aspecto */
+}
+.navBarImg{
+  max-width: 10%;
+  height: auto;
+}
+.redes-sociales a {
+  color: #f5e8e8;
+  font-size: 20px; /* Ajusta el tamaño de los iconos según sea necesario */
+  margin-right: 10px; /* Añade un margen derecho entre los iconos para separarlos */
+}
+
+p{
+  margin: 0;
+}
+.product-image {
+  width: 90vh;
+  height: 70vh;
+}
+.redes-sociales a {
+  color: #f5e8e8;
+  font-size: 20px; /* Ajusta el tamaño de los iconos según sea necesario */
+  margin-right: 10px; /* Añade un margen derecho entre los iconos para separarlos */
+}
+/* esto arregla el footeer al menos en caso de presentar problemas con parrafos especificar aca que solo aplique
+para footer */
+/* carousel.css */
+/* .carousel-image {
+  width: 35%;
+  height: auto; 
+} */
