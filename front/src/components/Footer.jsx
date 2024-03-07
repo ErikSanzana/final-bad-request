@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 

@@ -1,47 +1,23 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useContext } from "react";
-<<<<<<< HEAD:front/src/components/CardProduct.jsx
-import { useNavigate } from "react-router-dom";
-import { SoapContext } from "../context/context.jsx";
-import IconHeart from "../assets/icon/IconHeart.jsx";
-import { forOrder, addUnit, lessUnit } from "./helpers/Alerts.jsx";
-
-=======
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
-import { forOrder, addUnit, lessUnit } from "./utils/utils";
-
-// usar solo 1 carta para standarizar y reutilizar componentes.
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
+import { forOrder, addUnit, lessUnit } from "./Helpers/Alerts.jsx";
 
 const CardProduct = ({
-  // eslint-disable-next-line react/prop-types
   descripcion,
-  // eslint-disable-next-line react/prop-types
   id,
-  // eslint-disable-next-line react/prop-types
   stock,
-  // eslint-disable-next-line react/prop-types
   title,
-  // eslint-disable-next-line react/prop-types
   url_imagen,
-  // eslint-disable-next-line react/prop-types
   valor,
-  // eslint-disable-next-line react/prop-types
   add,
-  // eslint-disable-next-line react/prop-types
   fav,
-  // eslint-disable-next-line react/prop-types
   amount
 }) => {
   const { setProducts } = useContext(SoapContext);
-<<<<<<< HEAD:front/src/components/CardProduct.jsx
-  const navigate = useNavigate();
-=======
 
-
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
   const addToCart = (id) => {
     setProducts((cart) => {
       const toBuy = cart.map((product) => {
@@ -74,7 +50,6 @@ const CardProduct = ({
       });
       return toFav;
     });
-<<<<<<< HEAD:front/src/components/CardProduct.jsx
   };
 
   const removeFromCart = (id) => {
@@ -92,9 +67,6 @@ const CardProduct = ({
       });
       return remove;
     });
-=======
-    //   swal aca
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
   };
 
   const moreProduct = (id) => {
@@ -131,11 +103,7 @@ const CardProduct = ({
   const removeIfLessThanOne = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
-<<<<<<< HEAD:front/src/components/CardProduct.jsx
         if (product.id === id && product.amount == 0) {
-=======
-        if (product.id === id && product.amount == 0 ) {
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
           return {
             ...product,
             add: false,
@@ -160,7 +128,7 @@ const CardProduct = ({
 
           {title && (
             <div>
-              <IconHeart filled={fav}/>
+              <IconHeart filled={fav} />
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}
               {stock ? (
                 <div>
@@ -187,7 +155,7 @@ const CardProduct = ({
                 <div>
                   {" "}
                   <span> en el carro! </span>
-                  <Button variant="success"onClick={() => removeFromCart(id)}>
+                  <Button variant="success" onClick={() => removeFromCart(id)}>
                     Eliminar
                   </Button>
                 </div>
@@ -221,11 +189,19 @@ const CardProduct = ({
               {/* añade a favoritos, marca el corazon de rojo, y si ya es favorito, quitalo  */}
 
               {fav ? (
-                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
+                <Button
+                  variant="success"
+                  className="button1"
+                  onClick={() => addToFav(id)}
+                >
                   Quitar de favoritos
                 </Button>
               ) : (
-                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
+                <Button
+                  variant="success"
+                  className="button1"
+                  onClick={() => addToFav(id)}
+                >
                   Añadir a favoritos
                 </Button>
               )}

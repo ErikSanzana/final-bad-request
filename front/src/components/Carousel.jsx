@@ -1,29 +1,4 @@
-<<<<<<< HEAD
-import { useContext } from "react";
-import { SoapContext } from "../context/context.jsx";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"; // Importa tu archivo de estilos aquí si es necesario
-// import ProductCard from "./ProductCard"; // Asegúrate de tener la ruta correcta
-import CardProduct from "./CardProduct.jsx";
-
-function Carousel() {
-  // Ahora los productos vienen desde el context
-  const { products } = useContext(SoapContext);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true
-  };
-=======
 import Carousel from 'react-bootstrap/Carousel';
->>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e
 
 function Carrucel() {
   return (
