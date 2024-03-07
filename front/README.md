@@ -81,10 +81,16 @@ nacho{
                     - modifique unas cartas para ponerlas y reutilziarlas, son reusables para todas las visatas, vean como se ve, ya que en el carrusel se ve extraño, estube viendo que es por las iamgines ( se deberia usar imagenes del mismo tamaño para estandarizar todo).
                     - las imagenes se pueden standarizar a la mala por css
                     - tbn tienen la funcionalidad lista de favoritos y carrito, faltaria agragar la matematica del asunto (Que lo tengo en otro proyecto despues lo veo)
+
+                    
                     - context andando y alimentando a las cartas segun donde se ocupen.
           - 05-03   - añadido, suma de productos en carta,  total productos en navbar, SWAL2 para alertas de esto, 
                     - Carpeta Utils con funciones de Swal2 para mas orden. 
                     - 
-
-
+}
+Ximena{
+          -se mejoraron los estilos
+          -hubo una corrección de código (había un par de errores de sintaxis)
+          -actualización de imágenes
+          -nuevo carrusel en el home
 }
