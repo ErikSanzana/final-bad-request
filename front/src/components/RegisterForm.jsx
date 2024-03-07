@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-// import axios from "axios";
+import Container from 'react-bootstrap/Container';
 
 const RegisterForm = () => {
   const exampleRegion = [
@@ -48,8 +48,12 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="p-3 ">
-      <Form noValidate onSubmit={handleSubmit(send)}>
+  
+    <div className="p-1">
+      <Container fluid>
+      
+        <Col>
+      <Form noValidate onSubmit={handleSubmit(send)} >
         <Row className="mb-3">
           <Form.Group as={Col} md="4" controlId="formName">
             <Form.Label>Nombre</Form.Label>
@@ -62,7 +66,7 @@ const RegisterForm = () => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-
+          
           <Form.Group as={Col} md="4" controlId="formLastName1">
             <Form.Label>Apellido</Form.Label>
             <Form.Control
@@ -190,12 +194,15 @@ const RegisterForm = () => {
             </Form.Select>
           </Form.Group>
         </Row>
-
+<div></div>
         <Form.Label htmlFor="inputPassword5">Password</Form.Label>
         <Form.Control
-          type="password"
+          type="password" 
+          placeholder="Password" 
           id="inputPassword5"
-          aria-describedby="passwordHelpBlock"
+          size="sm"
+          //aria-describedby="passwordHelpBlock"
+          
         />
         <Form.Text id="passwordHelpBlock" muted>
           Your password must be 8-20 characters long, contain letters and
@@ -210,20 +217,19 @@ const RegisterForm = () => {
             feedbackType="invalid"
             {...register("agreeToTerms", { required: true })}
              isInvalid={!!errors.agreeToTerms}
-            
-          />
+            />
         </Form.Group>
-
         <br></br>
-
         {/* {checkBox.checked} */}
 
-        {/* <Button type="submit" disabled>
+        {/* <Button type="btn btn-success" disabled>
           ¡Registrame!
         </Button> */}
 
-        <Button type="submit">¡Registrame!</Button>
+        <Button variant="success">¡Registrame!</Button>
       </Form>
+      </Col>
+      </Container>
     </div>
   );
 };

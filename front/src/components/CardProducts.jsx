@@ -1,28 +1,34 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
-import { confirmBuy, forOrder, addUnit, lessUnit } from "./utils/utils";
+import { forOrder, addUnit, lessUnit } from "./utils/utils";
 
 // usar solo 1 carta para standarizar y reutilizar componentes.
 
 const CardProduct = ({
+  // eslint-disable-next-line react/prop-types
   descripcion,
+  // eslint-disable-next-line react/prop-types
   id,
+  // eslint-disable-next-line react/prop-types
   stock,
+  // eslint-disable-next-line react/prop-types
   title,
+  // eslint-disable-next-line react/prop-types
   url_imagen,
+  // eslint-disable-next-line react/prop-types
   valor,
+  // eslint-disable-next-line react/prop-types
   add,
+  // eslint-disable-next-line react/prop-types
   fav,
-  detail,
+  // eslint-disable-next-line react/prop-types
   amount
 }) => {
   const { setProducts } = useContext(SoapContext);
 
-  const navigate = useNavigate();
 
   const addToCart = (id) => {
     setProducts((cart) => {
@@ -62,7 +68,9 @@ const CardProduct = ({
   const moreProduct = (id) => {
     setProducts((plusProduct) => {
       const addProduct = plusProduct.map((add) => {
+        // eslint-disable-next-line react/prop-types
         if (add.id == id) {
+          // eslint-disable-next-line react/prop-types
           return { ...add, amount: Number(add.amount + 1) };
         } else {
           return add;
@@ -107,7 +115,7 @@ const CardProduct = ({
 
   return (
     <>
-      <Card style={{ width: "18rem" }} id={id} key={id}>
+      <Card className="card" id={id} key={id}>
         <Card.Img variant="top" src={url_imagen} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
@@ -121,10 +129,10 @@ const CardProduct = ({
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}
               {stock ? (
                 <div>
-                  <span> quedan:{stock}</span>
+                  <span> Stock:{stock}</span>
                   <span>
                     {" "}
-                    Precio:
+                    Valor:
                     {Intl.NumberFormat("es-CL", {
                       style: "currency",
                       currency: "CLP"
@@ -137,14 +145,14 @@ const CardProduct = ({
 
               {/* añade al carro y si ya esta en el carro, entonces avisa y da la opcion de eliminar */}
               {!add ? (
-                <Button variant="primary" onClick={() => addToCart(id)}>
+                <Button variant="success" onClick={() => addToCart(id)}>
                   añade al carro
                 </Button>
               ) : (
                 <div>
                   {" "}
                   <span> en el carro! </span>
-                  <Button variant="primary" onClick={() => removeFromCart(id)}>
+                  <Button variant="success"onClick={() => removeFromCart(id)}>
                     Eliminar
                   </Button>
                 </div>
@@ -178,11 +186,11 @@ const CardProduct = ({
               {/* añade a favoritos, marca el corazon de rojo, y si ya es favorito, quitalo  */}
 
               {fav ? (
-                <Button variant="primary" onClick={() => addToFav(id)}>
+                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
                   Quitar de favoritos
                 </Button>
               ) : (
-                <Button variant="primary" onClick={() => addToFav(id)}>
+                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
                   Añadir a favoritos
                 </Button>
               )}
