@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 //import firebaseApp from "./components/Firebase.jsx";
 
@@ -11,23 +11,40 @@ import StoreView from "./views/Store/Store.jsx";
 import Favoritos from "./views/Favoritos/Favoritos.jsx";
 import ShoppingCart from "./views/Cart/Cart.jsx";
 import NotFound from "./views/Errors/NotFound.jsx";
-
+import ProtectedRoutes from "./components/helpers/useAuth.jsx";
+import UserProfile from "./views/Profiles/UserProfile.jsx";
+import AdminProfile from "./views/Profiles/AdminProfile.jsx";
 
 function App() {
+  const { id } = useParams();
+  const { product_code } = useParams();
 
   return (
     <>
       <Navbarapp />
       <Routes>
-        <Route path="/" element={<Home />} />
-        {/*<Route path="/administrador" element={<Admin />} />*/}
-        <Route path="/login" element={<LogInView />} />
-        <Route path="/register" element={<RegisterView />} />
-        <Route path="/store" element={<StoreView />} />
-        <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/" element={<Home />} exact />
+        <Route path="/login" element={<LogInView />} exact />
+        <Route path="/register" element={<RegisterView />} exact />
 
-        <Route path="*" element={<NotFound />} /> 
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/user/:id" element={<UserProfile />}>
+            {" "}
+          </Route>
+          <Route path="/user/:id/favorites" element={<Favoritos />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+          {/* <Route path="/store/products/:product_code" element={<ProductDetail/>}  /> */}
+        </Route>
+
+        {/* <Route element={<ProtectedRoutes />} pero pora ADMN > */}
+        <Route path="/admn" element={<AdminProfile />} exact />
+        {/* <Route path="/admn/postproduct" element={<PostProduct />} exact /> */}
+
+        {/* </Route> */}
+
+        <Route path="/store" element={<StoreView />} />
+
+        <Route path="*" element={<NotFound />} exact />
       </Routes>
       <Footer />
     </>

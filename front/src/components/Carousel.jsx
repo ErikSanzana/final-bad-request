@@ -3,8 +3,8 @@ import { SoapContext } from "../context/context.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; // Importa tu archivo de estilos aquí si es necesario
-import ProductCard from "./ProductCard"; // Asegúrate de tener la ruta correcta
-import CardProduct from "./CardProducts";
+// import ProductCard from "./ProductCard"; // Asegúrate de tener la ruta correcta
+import CardProduct from "./CardProduct.jsx";
 
 function Carousel() {
   // Ahora los productos vienen desde el context

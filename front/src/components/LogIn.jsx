@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const LogIn = () => {
-
   const {
     register,
     handleSubmit,
@@ -20,11 +19,11 @@ const LogIn = () => {
     console.log(data);
   };
   // arreglar que lo madne al query ... ver como enviarlo por dentro y no por query... revidar trabajos
-  
+
   return (
-    <Form>
+    <Form className='formlog'>
       <Form.Group
-        className="mb-3"
+        className="mb-4"
         controlId="formBasicEmail"
         noValidate
         onSubmit={handleSubmit(send)}
@@ -35,13 +34,11 @@ const LogIn = () => {
           placeholder="Enter email"
           required
           autoComplete="section-red address-level2"
-        
           {...register("email")}
         />
         <Form.Text className="text-muted">
           ingresa tu correo, si aun no estas registrado ingresa
-          <Link to="../register"> aqui
-          </Link>
+          <Link to="../register"> aqui</Link>
         </Form.Text>
       </Form.Group>
 
@@ -60,10 +57,7 @@ const LogIn = () => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
 
-
-      <Button type="submit">
-        Submit
-      </Button>
+      <Button variant="btn btn-success" type="submit">Submit</Button>
     </Form>
   );
 };

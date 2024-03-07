@@ -1,16 +1,15 @@
+import { ProfileMenu } from "../../components/ProfileMenu";
 
-export const AdminView = () => {
+export const AdminProfile = () => {
+  // postear, ver usuarios , otras opciones
 
+  return (
+    <>
+      
+      
+      <ProfileMenu />
+    </>
+  );
+};
 
-// postear, ver usuarios , otras opciones
-
-
-    return (
-      <>
- 
-      </>
-    );
-  
-  };
-  
-  export default AdminView;
+export default AdminProfile;

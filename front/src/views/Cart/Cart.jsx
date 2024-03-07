@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { SoapContext } from "../../context/context";
-import CardProduct from "../../components/CardProducts";
-import { confirmBuy } from "../../components/helpers/SwalHelper";
+import CardProduct from "../../components/CardProduct.jsx";
+import { confirmBuy } from "../../components/helpers/Alerts.jsx";
 
 const ShoppingCart = () => {
   const { products,totalProducts } = useContext(SoapContext);

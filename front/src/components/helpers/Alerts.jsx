@@ -1,4 +1,4 @@
-// funciones de swal (que se llaman) y otras que se llaman
+// funciones de swal (que se llaman) como alerts
 import Swal from "sweetalert2";
 
 const confirmBuy = () => {

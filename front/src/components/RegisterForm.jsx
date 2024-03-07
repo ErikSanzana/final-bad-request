@@ -228,6 +228,9 @@ const RegisterForm = () => {
 
         <Button type="submit">¡Registrame!</Button>
       </Form>
+      <div>
+        o registrate con tus redes 
+      </div>
     </div>
   );
 };

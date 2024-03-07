@@ -1,21 +1,22 @@
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
-import imgNabar from "../assets/img/logo.webp";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 import { useContext } from "react";
 import { SoapContext } from "../context/context";
+import { NavLink } from "./helpers/NavLink";
+
+import imgNabar from "../assets/img/logo.webp";
 
 const Navbarapp = () => {
   const { totalProducts } = useContext(SoapContext);
 
-  const setActiveClass = ({ isActive }) =>
-    isActive
-      ? "text-warning mt-2 pe-2 text-decoration-none"
-      : "text-white mt-2 pe-2 text-decoration-none";
+  // const setActiveClass = ({ isActive }) =>
+  //   isActive
+  //     ? "text-warning mt-2 pe-2 text-decoration-none"
+  //     : "text-white mt-2 pe-2 text-decoration-none";
+  // pasa al componente/helpers NavLink
+
   return (
     <Navbar expand="lg" className="bg-dark d-flex justify-content-around">
       <Nav className="customNav">
@@ -24,21 +25,13 @@ const Navbarapp = () => {
           <p className="titleNavbar  text-white"> JABONESVEGAN</p>
         </NavLink>
         <div className="linkers">
-          <NavLink to="/store" className={setActiveClass}>
+          <NavLink to="/store">
             <div>Tienda</div>
           </NavLink>
 
-          {/* <NavLink to="/favoritos" className={setActiveClass}>
-            <div>Favoritos</div>
-          </NavLink> */}
-
-          {/* <NavLink to="/login" className={setActiveClass}>
-            <div>Login</div>
-          </NavLink> */}
-
-          {/* <NavLink to="/register" className={setActiveClass}>
-            <div>Registro</div>
-          </NavLink> */}
+          <NavLink to="/login">
+            <div>Inciar Sesión </div>
+          </NavLink>
         </div>
         <div>
           <Form className="d-flex">
@@ -55,10 +48,14 @@ const Navbarapp = () => {
           <Button variant="outline-success">Search</Button>
         </div>
 
+        {/* <NavLink to="/favoritos" >
+            <div>Favoritos</div>
+          </NavLink> */}
+
         {/* añadir un if logedin entonces que envie al carro de compras, de otra forma que solo se vea algun mensaje o nada */}
-        <NavLink to="/cart" className={setActiveClass}>
-          <div className="divCart">
-            {totalProducts ? (
+        <NavLink to="/cart">
+          {totalProducts ? (
+            <div className="divCart">
               <span>
                 {" "}
                 🛒Monto:
@@ -67,10 +64,12 @@ const Navbarapp = () => {
                   currency: "CLP"
                 }).format(Number(totalProducts))}
               </span>
-            ) : (
+            </div>
+          ) : (
+            <div className="divCart">
               <span>Esperamos tu pedido</span>
-            )}
-          </div>
+            </div>
+          )}
         </NavLink>
       </Nav>
     </Navbar>

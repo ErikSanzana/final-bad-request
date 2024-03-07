@@ -2,28 +2,33 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { SoapContext } from "../context/context";
-import IconHeart from "../assets/icon/IconHeart";
+import { SoapContext } from "../context/context.jsx";
+import IconHeart from "../assets/icon/IconHeart.jsx";
 import { forOrder, addUnit, lessUnit } from "./helpers/Alerts.jsx";
 
-// se usa solo 1 carta para standarizar y reutilizar componentes.
 
 const CardProduct = ({
+  // eslint-disable-next-line react/prop-types
   descripcion,
+  // eslint-disable-next-line react/prop-types
   id,
+  // eslint-disable-next-line react/prop-types
   stock,
+  // eslint-disable-next-line react/prop-types
   title,
+  // eslint-disable-next-line react/prop-types
   url_imagen,
+  // eslint-disable-next-line react/prop-types
   valor,
+  // eslint-disable-next-line react/prop-types
   add,
+  // eslint-disable-next-line react/prop-types
   fav,
-  detail,
+  // eslint-disable-next-line react/prop-types
   amount
 }) => {
   const { setProducts } = useContext(SoapContext);
-
   const navigate = useNavigate();
-
   const addToCart = (id) => {
     setProducts((cart) => {
       const toBuy = cart.map((product) => {
@@ -56,7 +61,23 @@ const CardProduct = ({
       });
       return toFav;
     });
+  };
 
+  const removeFromCart = (id) => {
+    setProducts((products) => {
+      const remove = products.map((product) => {
+        if (product.id === id) {
+          return {
+            ...product,
+            add: false,
+            amount: 0
+          };
+        } else {
+          return product;
+        }
+      });
+      return remove;
+    });
   };
 
   const moreProduct = (id) => {
@@ -88,10 +109,10 @@ const CardProduct = ({
     lessUnit();
   };
 
-  const removeFromCart = (id) => {
+  const removeIfLessThanOne = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
-        if (product.id === id || product.amount == 0) {
+        if (product.id === id && product.amount == 0) {
           return {
             ...product,
             add: false,
@@ -160,7 +181,7 @@ const CardProduct = ({
                       className="success"
                       onClick={() => {
                         lessProducts(id);
-                        removeFromCart(id);
+                        removeIfLessThanOne(id);
                       }}
                     >
                       -
