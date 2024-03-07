@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const SoapContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const SoapProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState();
@@ -52,7 +53,6 @@ const SoapProvider = ({ children }) => {
   useEffect(() => {
     totalCart();
   },);
-
 
   return (
     <SoapContext.Provider

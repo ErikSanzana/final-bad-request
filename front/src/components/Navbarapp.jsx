@@ -18,7 +18,7 @@ const Navbarapp = () => {
   // pasa al componente/helpers NavLink
 
   return (
-    <Navbar expand="lg" className="bg-dark d-flex justify-content-around">
+    <Navbar expand="lg" className="bg-success d-flex justify-content-around">
       <Nav className="customNav">
         <NavLink to="/">
           <img src={imgNabar} className="navBarImg" alt="Vegan Soap img" />
@@ -29,8 +29,21 @@ const Navbarapp = () => {
             <div>Tienda</div>
           </NavLink>
 
+<<<<<<< HEAD
           <NavLink to="/login">
             <div>Inciar Sesión </div>
+=======
+          <NavLink to="/favoritos" className={setActiveClass}>
+            <div>Favoritos</div>
+          </NavLink>
+
+          <NavLink to="/login" className={setActiveClass}>
+            <div>Login</div>
+          </NavLink>
+
+          <NavLink to="/register" className={setActiveClass}>
+            <div>Registro</div>
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e
           </NavLink>
         </div>
         <div>
@@ -45,8 +58,9 @@ const Navbarapp = () => {
         </div>
 
         <div>
-          <Button variant="outline-success">Search</Button>
+          <Button variant="outline-light">Search</Button>
         </div>
+<<<<<<< HEAD
 
         {/* <NavLink to="/favoritos" >
             <div>Favoritos</div>
@@ -56,6 +70,11 @@ const Navbarapp = () => {
         <NavLink to="/cart">
           {totalProducts ? (
             <div className="divCart">
+=======
+        <NavLink to="/cart" className={setActiveClass}>
+          <div className="divCart">
+            {totalProducts ? (
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e
               <span>
                 {" "}
                 🛒Monto:

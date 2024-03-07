@@ -1,11 +1,19 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useContext } from "react";
+<<<<<<< HEAD:front/src/components/CardProduct.jsx
 import { useNavigate } from "react-router-dom";
 import { SoapContext } from "../context/context.jsx";
 import IconHeart from "../assets/icon/IconHeart.jsx";
 import { forOrder, addUnit, lessUnit } from "./helpers/Alerts.jsx";
 
+=======
+import { SoapContext } from "../context/context";
+import IconHeart from "../assets/icon/IconHeart";
+import { forOrder, addUnit, lessUnit } from "./utils/utils";
+
+// usar solo 1 carta para standarizar y reutilizar componentes.
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
 
 const CardProduct = ({
   // eslint-disable-next-line react/prop-types
@@ -28,7 +36,12 @@ const CardProduct = ({
   amount
 }) => {
   const { setProducts } = useContext(SoapContext);
+<<<<<<< HEAD:front/src/components/CardProduct.jsx
   const navigate = useNavigate();
+=======
+
+
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
   const addToCart = (id) => {
     setProducts((cart) => {
       const toBuy = cart.map((product) => {
@@ -61,6 +74,7 @@ const CardProduct = ({
       });
       return toFav;
     });
+<<<<<<< HEAD:front/src/components/CardProduct.jsx
   };
 
   const removeFromCart = (id) => {
@@ -78,12 +92,17 @@ const CardProduct = ({
       });
       return remove;
     });
+=======
+    //   swal aca
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
   };
 
   const moreProduct = (id) => {
     setProducts((plusProduct) => {
       const addProduct = plusProduct.map((add) => {
+        // eslint-disable-next-line react/prop-types
         if (add.id == id) {
+          // eslint-disable-next-line react/prop-types
           return { ...add, amount: Number(add.amount + 1) };
         } else {
           return add;
@@ -112,7 +131,11 @@ const CardProduct = ({
   const removeIfLessThanOne = (id) => {
     setProducts((products) => {
       const remove = products.map((product) => {
+<<<<<<< HEAD:front/src/components/CardProduct.jsx
         if (product.id === id && product.amount == 0) {
+=======
+        if (product.id === id && product.amount == 0 ) {
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e:front/src/components/CardProducts.jsx
           return {
             ...product,
             add: false,
@@ -128,7 +151,7 @@ const CardProduct = ({
 
   return (
     <>
-      <Card style={{ width: "18rem" }} id={id} key={id}>
+      <Card className="card" id={id} key={id}>
         <Card.Img variant="top" src={url_imagen} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
@@ -137,15 +160,14 @@ const CardProduct = ({
 
           {title && (
             <div>
-              <IconHeart filled={fav} />
-
+              <IconHeart filled={fav}/>
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}
               {stock ? (
                 <div>
-                  <span> quedan:{stock}</span>
+                  <span> Stock:{stock}&nbsp;</span>
                   <span>
                     {" "}
-                    Precio:
+                    &nbsp;&nbsp;&nbsp;&nbsp; Valor:
                     {Intl.NumberFormat("es-CL", {
                       style: "currency",
                       currency: "CLP"
@@ -158,14 +180,14 @@ const CardProduct = ({
 
               {/* añade al carro y si ya esta en el carro, entonces avisa y da la opcion de eliminar */}
               {!add ? (
-                <Button variant="primary" onClick={() => addToCart(id)}>
+                <Button variant="success" onClick={() => addToCart(id)}>
                   añade al carro
                 </Button>
               ) : (
                 <div>
                   {" "}
                   <span> en el carro! </span>
-                  <Button variant="primary" onClick={() => removeFromCart(id)}>
+                  <Button variant="success"onClick={() => removeFromCart(id)}>
                     Eliminar
                   </Button>
                 </div>
@@ -199,11 +221,11 @@ const CardProduct = ({
               {/* añade a favoritos, marca el corazon de rojo, y si ya es favorito, quitalo  */}
 
               {fav ? (
-                <Button variant="primary" onClick={() => addToFav(id)}>
+                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
                   Quitar de favoritos
                 </Button>
               ) : (
-                <Button variant="primary" onClick={() => addToFav(id)}>
+                <Button variant="success" className='button1' onClick={() => addToFav(id)}>
                   Añadir a favoritos
                 </Button>
               )}

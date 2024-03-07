@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useContext } from "react";
 import { SoapContext } from "../context/context.jsx";
 import Slider from "react-slick";
@@ -20,19 +21,38 @@ function Carousel() {
     autoplaySpeed: 2000,
     pauseOnHover: true
   };
+=======
+import Carousel from 'react-bootstrap/Carousel';
+>>>>>>> fc693d00e7e48dde0aa35cc276d12eef0a03440e
 
+function Carrucel() {
   return (
-    <div className="carousel-container">
-      <Slider {...settings}>
-        {products.map((product) => (
-          <div key={product.id} className="center-image ">
-            {/* <ProductCard product={product} /> */}
-            <CardProduct id={product.id} url_imagen={product.url_imagen} />
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
-}
-
-export default Carousel;
+    <Carousel data-bs-theme="dark">
+      <Carousel.Item interval={1000}>
+        <img src="../../src/assets/img/infantil.jpg"  className= 'carousel-image'/>
+        <Carousel.Caption >
+          <div>
+          <h3 className='text1'>Linea Infantil</h3>
+          <p className='textp1'>Tenemos diferentes figuras.</p></div>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={1000}>
+      <img src="../../src/assets/img/tradicional.jpg" className='carousel-image'/>
+        <Carousel.Caption>
+          <h3 className='text1'>Linea Tradicional</h3>
+          <p className='textp1'>Busca el que más te guste.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={1000}>
+      <img src="../../src/assets/img/regalo.jpg" className='carousel-image'/>
+        <Carousel.Caption>
+          <h3 className='text1'>Para Regalar</h3>
+          <p className='textp1'>
+            En ese momento especial.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  )
+  }
+export default Carrucel;
