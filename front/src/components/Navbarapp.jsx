@@ -16,7 +16,7 @@ const Navbarapp = () => {
   //   isActive
   //     ? "text-warning mt-2 pe-2 text-decoration-none"
   //     : "text-white mt-2 pe-2 text-decoration-none";
-  // pasa al componente/helpers NavLink
+  // pasa al componente/helpers NavLink // recordar borrar estos comentarios
 
   return (
     <Navbar expand="lg" className="bg-success d-flex justify-content-around">

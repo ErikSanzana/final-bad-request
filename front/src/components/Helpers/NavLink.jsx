@@ -1,5 +1,5 @@
 import { NavLink as NavLinkReacRouter } from "react-router-dom";
-//larga vida a midudev : https://youtu.be/iPNt12IdbCU?si=E0AOoNsjDooNirkW&t=4244
+//larga vida a san midudev : https://youtu.be/iPNt12IdbCU?si=E0AOoNsjDooNirkW&t=4244
 
 export const NavLink = ({ to, children, ...props }) => {
   return (
@@ -12,7 +12,6 @@ export const NavLink = ({ to, children, ...props }) => {
       }
       to={to}
     >
-      {" "}
       {children}{" "}
     </NavLinkReacRouter>
   );
