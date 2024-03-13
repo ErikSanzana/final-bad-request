@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #38b021;
   text-decoration: inherit;
 }
 
@@ -27,7 +27,7 @@ body {
   margin: 15%;
   display: flex;
   place-items: center;
-
+  overflow: scroll;
 }
 
 button {
@@ -37,7 +37,7 @@ button {
   font-size: 10px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #e8cfcf;
+  background-color: #059347;
   width: 150px;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -63,7 +63,8 @@ button:focus-visible {
   }
 
   button {
-    background-color: #f9f9f9;
+    background-color: #9a1313;
+    
   }
 }
 .button1 {
@@ -75,7 +76,8 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Esto hará que el fondo sea fijo */
+  height: 300px;
+  /* Esto hará que el fondo sea fijo  */
 
 }
 .card {
@@ -86,11 +88,10 @@ button:focus-visible {
   margin-top: 5px;
 }
 
-
 .formlog {
   width: 400px;
   height: 300px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 h1 {
