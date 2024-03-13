@@ -27,12 +27,10 @@ Erik{
           ? What do you want to use as your public directory? public
           ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
           ? Set up automatic builds and deploys with GitHub? No
-
           - Wrote public/index.html
             }
             npm run primero (compila)
             npm run segundo (manda al hosting los cambios produccion)
-
 }
 Gerardo{
 
@@ -71,8 +69,6 @@ Tansuani{
 -se corrige CSS de home para igualar tamaño de imagenes en tienda, favoritos y carro. Pendiente carusel.
 }
 
-
-
 nacho{
 
            -holi
@@ -84,7 +80,12 @@ nacho{
                     - context andando y alimentando a las cartas segun donde se ocupen.
           - 05-03   - añadido, suma de productos en carta,  total productos en navbar, SWAL2 para alertas de esto, 
                     - Carpeta Utils con funciones de Swal2 para mas orden. 
-                    - 
-
-
+}
+Ximena{
+Se corrigieron las relaciones de la BD,
+El código arrojaba un error en un componente.
+También cambió el carrusel.
+mejora de CSS
+Agregué el componente de red social (login)
+instalación del paquete npm reactjs-social-login
 }
