@@ -12,13 +12,7 @@ import imgNabar from "../assets/img/logo.webp";
 const Navbarapp = () => {
   const { totalProducts } = useContext(SoapContext);
 
-  // const setActiveClass = ({ isActive }) =>
-  //   isActive
-  //     ? "text-warning mt-2 pe-2 text-decoration-none"
-  //     : "text-white mt-2 pe-2 text-decoration-none";
-  // pasa al componente/helpers NavLink // recordar borrar estos comentarios
-
-  return (
+   return (
     <Navbar expand="lg" className="bg-success d-flex justify-content-around">
       <Nav className="customNav">
         <NavLink to="/">
@@ -34,24 +28,7 @@ const Navbarapp = () => {
             <div>Inciar Sesión </div>
           </NavLink>
         </div>
-        <div>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-          </Form>
-        </div>
-
-        <div>
-          <Button variant="outline-light">Search</Button>
-        </div>
-
-        {/* <NavLink to="/favoritos" >
-            <div>Favoritos</div>
-          </NavLink> */}
+             
 
         {/* añadir un if logedin entonces que envie al carro de compras, de otra forma que solo se vea algun mensaje o nada */}
         <NavLink to="/cart">
@@ -72,7 +49,9 @@ const Navbarapp = () => {
             </div>
           )}
         </NavLink>
+       
       </Nav>
+      
     </Navbar>
   );
 };

@@ -1,18 +1,18 @@
 .divCart {
   margin-right: 3rem;
 }
-
 .me-2 {
   width: 200px;
   margin-right: 10px;
 }
 .card-img-top {
-  width: 60%;
-  height: 40%;
+  width: 45%;
+  height: 30%;
   margin-top: 20px;
 }
 .card {
-  width: 250px;
+  width: 220px;
+  height: 350px;
   border-radius: 30px;
   border-width: 2px;
   box-shadow: 10px 11px 5px 0px rgba(129, 113, 113, 0.65);
@@ -23,10 +23,10 @@
   padding: 20px;
   height: 50px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 50%;
 }
 .carousel-image {
-  height: 500px;
+  height: 400px;
   padding-top: 20px;
   margin-top: 1px;
   margin-bottom: 5px;

@@ -45,7 +45,6 @@ Gerardo{
             -Se agrega link Login/registro
             -Se agregar campo de busqueda y su botton
 }
-
 Tansuani{
 -su crea nuevo componente NewCard
 01/03/2024
@@ -70,9 +69,6 @@ Tansuani{
 -de la carpeta "public" se elimina "vite.svg"
 -se corrige CSS de home para igualar tamaño de imagenes en tienda, favoritos y carro. Pendiente carusel.
 }
-
-
-
 nacho{
 
            -holi
@@ -86,5 +82,8 @@ nacho{
                     - Carpeta Utils con funciones de Swal2 para mas orden. 
                     - 
 
-
+}
+ximena{
+  Se corrigieron las relaciones de la BD, los CSS se mejoraron, el código arrojaba un error en un componente.
+  También se cambió el carrusel.
 }

@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Container from "react-bootstrap/esm/Container";
 
 const LogIn = () => {
   const {
@@ -22,6 +23,7 @@ const LogIn = () => {
   // arreglar que lo madne al query ... ver como enviarlo por dentro y no por query... revidar trabajos
 
   return (
+    <Container fluid >
     <Form className="formlog" onSubmit={handleSubmit(send)}>
       <Form.Group className="mb-4" controlId="basicEmail" noValidate>
         <Form.Label>Email address</Form.Label>
@@ -64,6 +66,7 @@ const LogIn = () => {
         entra al sitio!
       </Button>
     </Form>
+    </Container>
   );
 };
 

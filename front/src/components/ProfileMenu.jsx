@@ -10,7 +10,7 @@ export const ProfileMenu = () => {
         <Button> Editar Datos</Button>
         <Button> Tienda </Button>
         <Button> Favorites </Button>
-        <Button> pedidos </Button>
+        <Button> Pedidos </Button>
       </div>
     </>
   );

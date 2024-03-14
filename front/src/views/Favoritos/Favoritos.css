@@ -1,5 +1,6 @@
 .imgNabar {
     width: 10%;
+    align-self: flex-start;
   }
   
   .navbar-nav {

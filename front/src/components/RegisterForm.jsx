@@ -53,8 +53,9 @@ const RegisterForm = () => {
 
   return (
     <>
-      <div className="p-1">
-        <Form noValidate onSubmit={handleSubmit(send)}>
+    <Container fluid ="xl">
+       <div className="p-1">
+          <Form noValidate onSubmit={handleSubmit(send)}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" controlId="formName">
               <Form.Label>Nombre</Form.Label>
@@ -227,10 +228,11 @@ const RegisterForm = () => {
                         </Button> */}
 
           <Button variant="success" type="btn btn-success">¡Registrame!</Button>
+          
         </Form>
-
-        <div>o registrate con tus redes</div>
-      </div>
+       <div>o registrate con tus redes</div>
+       </div>
+      </Container>
     </>
   );
 };

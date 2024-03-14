@@ -3,11 +3,13 @@ import { NavLink as NavLinkReacRouter } from "react-router-dom";
 
 export const NavLink = ({ to, children, ...props }) => {
   return (
+    
     <NavLinkReacRouter
+  
       {...props}
       className={({ isActive }) =>
         isActive
-          ? "text-warning mt-2 pe-2 text-decoration-none"
+          ? "text-warning mt-pe-2 text-decoration-none"
           : "text-white mt-2 pe-2 text-decoration-none"
       }
       to={to}
