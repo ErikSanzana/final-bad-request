@@ -14,7 +14,7 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const useAuth = () => {
   // forma 1
-  const user = { loggedIn: false, isBanned: false }; //from server tbn puede ser con usestate
+  const user = { loggedIn: true, isBanned: false }; //from server tbn puede ser con usestate
   const bannHammer = <Navigate to="/yushalNotpas" />; //pagina para Baneados
   if (user.isBanned === true) {
     return bannHammer;

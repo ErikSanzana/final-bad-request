@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import { useContext } from "react";
 import { SoapContext } from "../context/context";
 import { NavLink } from "./Helpers/NavLink.jsx";
-
-
 import imgNabar from "../assets/img/logo.webp";
 
 const Navbarapp = () => {

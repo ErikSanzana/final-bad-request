@@ -15,13 +15,12 @@ import UserProfile from "./views/Profiles/UserProfile.jsx";
 import AdminProfile from "./views/Profiles/AdminProfile.jsx";
 import ProtectedRoutes from "./components/Helpers/UseAuth.jsx";
 
-
 function App() {
   const { id } = useParams();
   const { product_code } = useParams();
   function refreshPage() {
     window.location.reload(false);
-  }
+  };
 
   return (
     <>
