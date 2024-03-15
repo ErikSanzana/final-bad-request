@@ -1,4 +1,4 @@
-import { FormData } from "../../components/DataEdit";
+import RegisterForm from "./../../components/RegisterForm.jsx"
 import Button from "react-bootstrap/esm/Button";
 import "./AdminProfile.css";
 
@@ -9,14 +9,16 @@ export const AdminProfile = () => {
       <section className="mainAdmin">
         <article className="dataView">
           <Button> Editar Datos</Button>
-          <FormData />
+          <RegisterForm />
         </article>
 
         <article className="dataView">funcion de buscar usuario</article>
 
         <article className="dataView">banear usuarios</article>
 
-        <article className="dataView">otra cosa de ADMn</article>
+        <article className="dataView">
+          Post product- reusarformulario ?
+        </article>
       </section>
       <div></div>
     </>
