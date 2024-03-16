@@ -32,11 +32,11 @@ const Navbarapp = () => {
             <div>favorites </div>
           </NavLink>       
 
-
-          <NavLink to="/user/favorites">
-            <div>Inciar Sesión </div>
+          <NavLink to="/admn">
+            <div>admin </div>
           </NavLink>   
           
+
           <NavLink to="/login">
             <div>Inciar Sesión </div>
           </NavLink>
