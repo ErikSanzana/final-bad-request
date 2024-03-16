@@ -1,24 +1,44 @@
-import RegisterForm from "./../../components/RegisterForm.jsx"
+import RegisterForm from "./../../components/RegisterForm.jsx";
 import Button from "react-bootstrap/esm/Button";
 import "./AdminProfile.css";
 
 export const AdminProfile = () => {
-  // postear, ver usuarios , otras opciones
+  const whereIam = () => {
+    return true;
+  };
+
+  useEffect(() => {
+    whereIam();
+  });
+
+  // postear, put  , otras opciones
+
+
+
+
   return (
     <>
       <section className="mainAdmin">
         <article className="dataView">
           <Button> Editar Datos</Button>
-          <RegisterForm />
+          <RegisterForm adminView={whereIam} />
         </article>
 
-        <article className="dataView">funcion de buscar usuario</article>
+        <article className="dataView">       
+          funcion de buscar usuario
 
-        <article className="dataView">banear usuarios</article>
+        
+        </article>
 
         <article className="dataView">
-          Post product- reusarformulario ?
+          
+          
+          banear usuarios
+        
+                
         </article>
+
+        <article className="dataView">Post product- reusarformulario ?</article>
       </section>
       <div></div>
     </>
