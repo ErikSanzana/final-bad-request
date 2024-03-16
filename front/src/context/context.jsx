@@ -12,14 +12,14 @@ const SoapProvider = ({ children }) => {
     try {
       axios
         .get(
-          "https://finalbadrequest-default-rtdb.firebaseio.com/productos.json"
+          ENDPOINT.products //"https://finalbadrequest-default-rtdb.firebaseio.com/productos.json"
         )
         .then((response) => {
-          // console.table(response.data);
+           console.log(response);
           // OJO!!!! add, detail, amount y Fav son para el carro de compras y para favoritos
           //manejar amount segun stock (añadir logica si stock = 0 no comprar)
           setProducts(
-            response.data.map((obj) => ({
+            response.data.products.map((obj) => ({
               ...obj,
               add: false,
               detail: false,

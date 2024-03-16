@@ -8,17 +8,17 @@ export const StoreView = () => {
     <div className="p-3 m-3 d-flex justify-content-between ">
       {products.map((product) => (
         <CardProduct
-          key={product.id}
-          id={product.id}
-          stock={product.stock}
-          title={product.title}
-          url_imagen={product.url_imagen}
-          valor={product.valor}
-          add={product.add}
-          fav={product.fav}
-          detail={product.detail}
-          amount={product.amount}
-        />
+        key={product.id}
+        id={product.id}
+        stock={product.stock}
+        title={product.name}
+        url_imagen={product.product_image}
+        valor={product.price}
+        add={product.add}
+        fav={product.fav}
+        detail={product.detail}
+        amount={product.amount}
+      />
       ))}
     </div>
   );
