@@ -17,4 +17,5 @@ export const ENDPOINT = {
 
 
 
+  products: URLBASE + `/api/v1/store/products`,
 };
