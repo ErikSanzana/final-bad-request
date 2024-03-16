@@ -21,7 +21,7 @@ export const LogInView = () => {
         <div> o usa tu red .... aca el inicio con 
           
         </div>
-        </NavLink >
+        </NavLink>
         </div>
       <div className="d-inline-flex justify-content-center border border-5 p-2 mt-4 rounded bg-primary-subtle">
           <LogIn />
