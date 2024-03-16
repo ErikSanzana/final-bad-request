@@ -9,7 +9,6 @@ export const LogInView = () => {
       <section className="section1">
         <div>
           <User />
-          {/* <LogoutButton /> // a navbar cuando estemos log in */}
 
           <NavLink to="/register">
             <Button variant="success" type="btn btn-success">

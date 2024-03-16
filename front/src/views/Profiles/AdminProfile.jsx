@@ -14,8 +14,6 @@ export const AdminProfile = () => {
   // postear, put  , otras opciones
 
 
-
-
   return (
     <>
       <section className="mainAdmin">

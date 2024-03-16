@@ -6,9 +6,9 @@ export const StoreView = () => {
   const { products } = useContext(SoapContext);
   return (
     <div className="p-3 m-3 d-flex justify-content-between ">
-      {products.map((product) => (
+      {products.map((product, key) => (
         <CardProduct
-        key={product.id}
+        key={key}
         id={product.id}
         stock={product.stock}
         title={product.name}

@@ -7,7 +7,9 @@ import RegisterView from "./views/Register/RegisterView.jsx";
 import LogInView from "./views/LogIn/LogInView.jsx";
 import Navbarapp from "./components/Navbarapp.jsx";
 import Footer from "./components/Footer.jsx";
+
 import StoreView from "./views/Store/Store.jsx";
+
 import Favoritos from "./views/Favoritos/Favoritos.jsx";
 import ShoppingCart from "./views/Cart/Cart.jsx";
 import NotFound from "./views/NotFound/NotFound.jsx";
@@ -16,8 +18,9 @@ import AdminProfile from "./views/Profiles/AdminProfile.jsx";
 import ProtectedRoutes from "./components/Helpers/UseAuth.jsx";
 
 function App() {
-  const { id } = useParams();
-  const { product_code } = useParams();
+  // const { id } = useParams();
+  // const { product_code } = useParams();
+
   function refreshPage() {
     window.location.reload(false);
   };
@@ -30,14 +33,14 @@ function App() {
         <Route path="/login" element={<LogInView />} exact />
         <Route path="/register" element={<RegisterView />} exact />
 
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/user/:id" element={<UserProfile />}>
-            {" "}
-          </Route>
-          <Route path="/user/:id/favorites" element={<Favoritos />} />
+        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route path="/user" element={<UserProfile />} />
+        
+        
+          <Route path="/user/favorites" element={<Favoritos />} />
           <Route path="/cart" element={<ShoppingCart />} />
           {/* <Route path="/store/products/:product_code" element={<ProductDetail/>}  /> */}
-        </Route>
+        {/* </Route> */}
 
         {/* <Route element={<ProtectedRoutes />} pero pora ADMN > */}
         <Route path="/admn" element={<AdminProfile />} exact />

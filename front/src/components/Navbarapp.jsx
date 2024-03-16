@@ -6,11 +6,13 @@ import { useContext } from "react";
 import { SoapContext } from "../context/context";
 import { NavLink } from "./Helpers/NavLink.jsx";
 import imgNabar from "../assets/img/logo.webp";
+import LogoutButton from "./Logout.jsx"
 
 const Navbarapp = () => {
   const { totalProducts } = useContext(SoapContext);
 
-   return (
+  return (
+     
     <Navbar expand="lg" className="bg-success d-flex justify-content-around">
       <Nav className="customNav">
         <NavLink to="/">
@@ -22,6 +24,19 @@ const Navbarapp = () => {
             <div>Tienda</div>
           </NavLink>
 
+          <NavLink to="/user">
+            <div>perfil user </div>
+          </NavLink>
+  
+          <NavLink to="/user/favorites">
+            <div>favorites </div>
+          </NavLink>       
+
+
+          <NavLink to="/user/favorites">
+            <div>Inciar Sesión </div>
+          </NavLink>   
+          
           <NavLink to="/login">
             <div>Inciar Sesión </div>
           </NavLink>
@@ -46,10 +61,10 @@ const Navbarapp = () => {
               <span>Esperamos tu pedido</span>
             </div>
           )}
-        </NavLink>
-       
+         </NavLink>
       </Nav>
       
+    <LogoutButton /> 
     </Navbar>
   );
 };

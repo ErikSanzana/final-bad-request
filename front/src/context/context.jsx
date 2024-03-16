@@ -15,7 +15,7 @@ const SoapProvider = ({ children }) => {
           ENDPOINT.products 
         )
         .then((response) => {
-          console.log(response.data.products);
+          console.log(response);
           // OJO!!!! add, detail, amount y Fav son para el carro de compras y para favoritos
           //manejar amount segun stock (añadir logica si stock = 0 no comprar)
           setProducts(
@@ -36,19 +36,17 @@ const SoapProvider = ({ children }) => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     getAxios();
-  }, [3000]);
+  }, []);
 
   const totalCart = () => {
     const sum = products
       .filter((f) => f.add == true)
       .map((m) => {
-        return { total: Number(m.amount * m.valor) };
+        return { total: Number(m.amount * m.price) };
       })
       .reduce((a, total) => a + total.total, 0);
-
     setTotalProducts(sum);
   };
   useEffect(() => {
