@@ -63,7 +63,8 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   />
                 </Form>
               )}
-              {registerView || userView ? null : (
+              
+              {registerView ? (
                 <Form.Group as={Col} md="4" controlId="address">
                   <Form.Label>RUT </Form.Label>
                   <Form.Control
@@ -71,11 +72,13 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                     type="number"
                     placeholder="Rut, sin puntos ni - (guion)"
                     size="sm"
-                    {...register("postal_code")}
+                    {...register("rut")}
                     autocomplete="section-red shipping rut"
                   />
                 </Form.Group>
-              ) }
+              ): null 
+              }
+              
               <Form.Group as={Col} md="4" controlId="postalCode">
                 <Form.Label>Codigo postal </Form.Label>
                 <Form.Control
@@ -89,16 +92,6 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
               </Form.Group>
 
               <Form.Group as={Col} htmlFor="start" controlId="dateOfBirth">
-                {/* <Form.Label>Fecha de nacimiento:</Form.Label>
-                <br></br>
-                <input
-                  type="date"
-                  id="start"
-                  name="user-register"
-                  min="01-01-1900"
-                  max="31-12-2024"
-                  {...register("birthDate")}
-                /> */}
                 <Form.Label>Fecha de nacimiento:</Form.Label>
                 <br></br>
                 <input
@@ -106,7 +99,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   name="birthDate" // Cambiado el nombre del campo
                   min="1900-01-01T00:00" // Formato adecuado para datetime-local
                   max="2024-12-31T23:59" // Formato adecuado para datetime-local
-                  {...register("birthDate")}
+                  {...register("birth_date")}
                 />{" "}
                 <br></br>
                 <span> para efectos de carta astral (no obligatorio) </span>
@@ -121,6 +114,8 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   id="inputPassword5"
                   aria-describedby="passwordHelpBlock"
                   placeholder="Ingrese su contraseña"
+                  {...register("password")}
+
                 />
                 <Form.Text id="passwordHelpBlock" muted>
                   Tu contraseña debe tener entre 6 a 255 caracteres, numeros y
@@ -129,13 +124,19 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                 </Form.Text>
 
                 <Form.Label htmlFor="inputPassword6">Password</Form.Label>
-                <Form.Control
+
+                {/* <Form.Control
                   type="password"
                   id="inputPassword6"
                   aria-describedby="passwordHelpBlock"
                   placeholder="Repite la contraseña "
-                />
+                /> */}
+
+
               </Form.Group>
+
+
+
             </Row>
 
             <Button variant="success" type="btn btn-success">
