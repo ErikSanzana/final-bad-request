@@ -42,8 +42,8 @@ const BanForm = () => {
             <Row className="mb-3">
             <Form.Select aria-label="Ban ?">
       <option>Let the hammer fall?</option>
-      <option value="false">One</option>
-      <option value="true">Two</option>
+      <option value="false">no banear</option>
+      <option value="true">BAN HAMMER </option>
     </Form.Select>
             </Row>
             <Button variant="success" type="btn btn-success">

@@ -26,8 +26,7 @@ export const AdminProfile = () => {
 
         <article className="dataView">       
           funcion de buscar usuario
-
-        
+       
         </article>
 
         <article className="dataView">
