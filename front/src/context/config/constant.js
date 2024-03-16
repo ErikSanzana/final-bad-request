@@ -7,15 +7,4 @@ export const ENDPOINT = {
   login: URLBASE + `/api/v1/login/user/login`,
   registarUsuario: URLBASE + `/api/v1/user`,
   products: URLBASE + `/v1/store/products`,
-
-
-
-
-
-
-
-
-
-
-  products: URLBASE + `/api/v1/store/products`,
 };

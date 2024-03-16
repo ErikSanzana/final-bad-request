@@ -10,7 +10,6 @@ export const UserProfile = () => {
   });
 
 // post axios 
-
   return (
     <>
       <section className="mainAdmin">
