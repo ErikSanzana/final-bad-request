@@ -9,14 +9,15 @@ const ShoppingCart = () => {
     <div className="p-3 d-flex justify-content-center">
       {products
         .filter((product) => product.add == true)
-        .map((product) => (
+        .map((product, key) => (
           <CardProduct
-            descripcion={product.descripcion}
+            key={key}
+            descripcion={product.description}
             id={product.id}
             stock={product.stock}
-            title={product.title}
-            url_imagen={product.url_imagen}
-            valor={product.valor}
+            title={product.name}
+            url_imagen={product.product_image}
+            valor={product.price}
             add={product.add}
             fav={product.fav}
             detail={product.detail}
