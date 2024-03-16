@@ -4,12 +4,14 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import axios from "axios";
+import { ENDPOINT } from "../context/config/constant";
 
 const RegisterForm = ({ userView, registerView, adminView }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
   const send = (data) => {
     Object.keys(data).forEach((key) => {
@@ -18,6 +20,18 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
       }
     });
     console.log(data);
+
+    axios
+      .post(ENDPOINT.registarUsuario, data)
+
+      .then(() => {
+        window.alert("Usuario registrado con éxito 😀.");
+        //navigate('/login')
+      })
+      .catch(({ response: { data } }) => {
+        console.error(data);
+        window.alert(`${data.message} 🙁.`);
+      });
   };
   // pasar por prop a la vista que corresponda para mandar por axios los cambios
 
@@ -27,7 +41,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
         <div className="p-1">
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="name">
+              <Form.Group as={Col} md="4" controlid="name">
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
                   required
@@ -35,11 +49,11 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   placeholder="Nombre"
                   size="sm"
                   {...register("name")}
-                  autocomplete="section-red shipping email"
+                  autoComplete="section-red shipping email"
                 />
               </Form.Group>
 
-              <Form.Group as={Col} md="4" controlId="last_name">
+              <Form.Group as={Col} md="4" controlid="last_name">
                 <Form.Label>Apellido</Form.Label>
                 <Form.Control
                   required
@@ -47,11 +61,11 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   placeholder="Apellido"
                   size="sm"
                   {...register("last_name")}
-                  autocomplete="section-red shipping email"
+                  autoComplete="section-red shipping email"
                 />
               </Form.Group>
               {userView ? null : (
-                <Form as={Col} md="3" controlId="email">
+                <Form as={Col} md="3" controlid="email">
                   <Form.Label>email</Form.Label>
                   <Form.Control
                     type="text"
@@ -59,13 +73,13 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                     size="sm"
                     required
                     {...register("email")}
-                    autocomplete="section-red shipping email"
+                    autoComplete="section-red shipping email"
                   />
                 </Form>
               )}
-              
+
               {registerView ? (
-                <Form.Group as={Col} md="4" controlId="address">
+                <Form.Group as={Col} md="4" controlid="rut">
                   <Form.Label>RUT </Form.Label>
                   <Form.Control
                     required
@@ -73,13 +87,12 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                     placeholder="Rut, sin puntos ni - (guion)"
                     size="sm"
                     {...register("rut")}
-                    autocomplete="section-red shipping rut"
+                    autoComplete="section-red shipping rut"
                   />
                 </Form.Group>
-              ): null 
-              }
-              
-              <Form.Group as={Col} md="4" controlId="postalCode">
+              ) : null}
+
+              <Form.Group as={Col} md="4" controlid="postalCode">
                 <Form.Label>Codigo postal </Form.Label>
                 <Form.Control
                   required
@@ -87,11 +100,11 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   placeholder="(direccion primaria)"
                   size="sm"
                   {...register("postal_code")}
-                  autocomplete="section-red shipping codigo postal"
+                  autoComplete="section-red shipping codigo postal"
                 />
               </Form.Group>
 
-              <Form.Group as={Col} htmlFor="start" controlId="dateOfBirth">
+              <Form.Group as={Col} htmlFor="start" controlid="dateOfBirth">
                 <Form.Label>Fecha de nacimiento:</Form.Label>
                 <br></br>
                 <input
@@ -115,7 +128,6 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   aria-describedby="passwordHelpBlock"
                   placeholder="Ingrese su contraseña"
                   {...register("password")}
-
                 />
                 <Form.Text id="passwordHelpBlock" muted>
                   Tu contraseña debe tener entre 6 a 255 caracteres, numeros y
@@ -131,12 +143,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
                   aria-describedby="passwordHelpBlock"
                   placeholder="Repite la contraseña "
                 /> */}
-
-
               </Form.Group>
-
-
-
             </Row>
 
             <Button variant="success" type="btn btn-success">
