@@ -15,8 +15,8 @@ const confirmBuy = () => {
       container: "CustomCssContainter",
       popup: "CustomPopUpCss",
       closeButton: "CustomButtonCss",
-      confirmButton: "CustonButtonOnActionCss"
-    }
+      confirmButton: "CustonButtonOnActionCss",
+    },
   });
 };
 
@@ -31,8 +31,8 @@ const forOrder = () => {
     timer: 1500,
     color: "#00000",
     customClass: {
-      popup: "CustomPopUpCss"
-    }
+      popup: "CustomPopUpCss",
+    },
   });
 };
 
@@ -43,31 +43,31 @@ const addUnit = () => {
     position: "top-end",
     showConfirmButton: false,
     timer: 1500,
-    timerProgressBar: true
+    timerProgressBar: true,
   });
   Toast.fire({
-    title: "le subiste 1 al carro wey",
+    title: "añadiste un producto al carro ",
     color: "#00000",
     customClass: {
-      popup: "CustomPopUpCss"
-    }
+      popup: "CustomPopUpCss",
+    },
   });
 };
 
 const lessUnit = () => {
-     //copiada y pegada, ajustar
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-      });
-      Toast.fire({
-        title: "le bajaste 1 al carro wey",
-        color: "#00000",
-        customClass: {
-          popup: "CustomPopUpCss",
-        },
-      });
-}
+  //copiada y pegada, ajustar
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  });
+  Toast.fire({
+    title: "Eliministe un producto al carro",
+    color: "#00000",
+    customClass: {
+      popup: "CustomPopUpCss",
+    },
+  });
+};

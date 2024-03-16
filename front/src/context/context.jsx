@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
+import { ENDPOINT } from "./config/constant.js";
 export const SoapContext = createContext();
 
 // eslint-disable-next-line react/prop-types
@@ -12,10 +12,10 @@ const SoapProvider = ({ children }) => {
     try {
       axios
         .get(
-          ENDPOINT.products //"https://finalbadrequest-default-rtdb.firebaseio.com/productos.json"
+          ENDPOINT.products 
         )
         .then((response) => {
-           console.log(response);
+          console.log(response);
           // OJO!!!! add, detail, amount y Fav son para el carro de compras y para favoritos
           //manejar amount segun stock (añadir logica si stock = 0 no comprar)
           setProducts(
@@ -24,7 +24,7 @@ const SoapProvider = ({ children }) => {
               add: false,
               detail: false,
               fav: false,
-              amount: 0
+              amount: 0,
             }))
           );
         })
@@ -52,7 +52,7 @@ const SoapProvider = ({ children }) => {
   };
   useEffect(() => {
     totalCart();
-  },);
+  });
 
   return (
     <SoapContext.Provider
@@ -60,7 +60,7 @@ const SoapProvider = ({ children }) => {
         products,
         setProducts,
         totalProducts,
-        setTotalProducts
+        setTotalProducts,
       }}
     >
       {children}
