@@ -11,7 +11,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
   const send = (data) => {
     Object.keys(data).forEach((key) => {
@@ -21,7 +21,8 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
     });
     console.log(data);
 
-    if (userView = true) { // agregar id = rut que venga del weon conectado
+    if ((userView = true)) {
+      // agregar id = rut que venga del weon conectado
       //token del weon conectado (en use estate)
       axios
         .put(ENDPOINT.registarUsuario + `/${id}`, data)
@@ -33,35 +34,34 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
           console.error(data);
           window.alert(`${data.message} 🙁.`);
         });
-    };
-  };
-  if (registerView = true) {
-    axios
-      .post(ENDPOINT.registarUsuario, data)
-      .then(() => {
-        window.alert("Usuario registrado con éxito 😀.");
-        //navigate('/login')
-      })
-      .catch(({ response: { data } }) => {
-        console.error(data);
-        window.alert(`${data.message} 🙁.`);
-      });
-  };
+    }
 
-  
-if (adminView = true) {
-  axios
-  .put(ENDPOINT.registarUsuario + `/${id}`, data)
-  .then(() => {
-    window.alert("ADMIN editado con éxito 😀.");
-    //navigate('/login')
-  })
-  .catch(({ response: { data } }) => {
-    console.error(data);
-    window.alert(`${data.message} 🙁.`);
-  });
-};
+    if ((registerView = true)) {
+      axios
+        .post(ENDPOINT.registarUsuario, data)
+        .then(() => {
+          window.alert("Usuario registrado con éxito 😀.");
+          //navigate('/login')
+        })
+        .catch(({ response: { data } }) => {
+          console.error(data);
+          window.alert(`${data.message} 🙁.`);
+        });
+    }
 
+    if ((adminView = true)) {
+      axios
+        .put(ENDPOINT.registarUsuario + `/${id}`, data)
+        .then(() => {
+          window.alert("ADMIN editado con éxito 😀.");
+          //navigate('/login')
+        })
+        .catch(({ response: { data } }) => {
+          console.error(data);
+          window.alert(`${data.message} 🙁.`);
+        });
+    }
+  };
   // pasar por prop a la vista que corresponda para mandar por axios los cambios
 
   return (
