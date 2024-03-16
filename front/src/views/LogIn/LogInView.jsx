@@ -1,6 +1,9 @@
 import Button from "react-bootstrap/esm/Button";
 import LogIn from "../../components/LogIn";
 import { NavLink } from "react-router-dom";
+import { LoginButton } from '../../components/LoginB.jsx';
+import { LogoutButton } from '../../components/Logout.jsx';
+import{User} from '../../components/User.jsx'
 
 
 export const LogInView = () => {
@@ -11,7 +14,11 @@ export const LogInView = () => {
       <div>
       <NavLink to="/register" >
        <Button variant="success" type="btn btn-success">  ¡Registrate aqui! </Button> 
-        <div> o usa tu red .... aca el inicio con </div>
+        <div> o usa tu red .... aca el inicio con 
+          <User/>
+          <LoginButton/>
+          <LogoutButton/>
+        </div>
         </NavLink >
         </div>
       <div className="d-inline-flex justify-content-center border border-5 p-2 mt-4 rounded bg-primary-subtle">
