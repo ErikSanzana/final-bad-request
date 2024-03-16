@@ -1,6 +1,6 @@
 // import { useContext } from "react";
 import { useEffect } from "react";
-import RegisterForm from "../../components/RegisterForm";
+import RegisterForm from "../../components/RegisterForm.jsx";
 
 export const RegisterView = () => {
   const whereIam = () => {
