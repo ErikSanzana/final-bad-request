@@ -3,7 +3,7 @@ import RegisterForm from "./../../components/RegisterForm.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ENDPOINT } from "../../context/config/constant.js";
-
+import { NavLink } from "../../components/Helpers/NavLink.jsx"
 // que funcione aca va, que se vea historial de productos, que se vea el formulario para editar datos. y que se vena sus propuios datos
 
 const UserProfile = () => {
@@ -71,7 +71,10 @@ const UserProfile = () => {
         </article>
 
         <article className="dataView">
-          {/* navigate to = favorites o ir a favoritos (boton navigate) */}
+        <NavLink to="/user/favorites">
+            <div>favorites </div>
+          </NavLink>       
+
         </article>
 
         <article className="dataView">
