@@ -34,15 +34,18 @@ button {
   border-radius: 8px;
   border: 1px ;
   padding: 0.6em 1.2em;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #059347;
+  background-color: #932405;
   width: 150px;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
+.card-body{
+  display: flex;
+  flex-direction: column-reverse;
+}
 button:hover {
   border-color: #646cff;
 }
@@ -63,7 +66,7 @@ button:focus-visible {
   }
 
   button {
-    background-color: #9a1313;
+    background-color: #529a13;
     
   }
 }
@@ -85,7 +88,6 @@ button:focus-visible {
   background-color: transparent;
   align-items: center;
   /* Ajusta el color de fondo según sea necesario */
-  margin-top: 5px;
 }
 
 .formlog {
