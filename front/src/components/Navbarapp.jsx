@@ -41,7 +41,7 @@ const Navbarapp = () => {
               <p>Prefil </p>
             </NavLink>
           )}
-          {!dataLog.id ? null : (
+          {!dataLog.rut == 123456789  ? null : (
           <NavLink to="/admn">
             <p>ADM PANEL </p>
           </NavLink>
