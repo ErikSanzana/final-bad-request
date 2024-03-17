@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { SoapContext } from "../../context/context";
-import CardProduct from "../../components/CardProduct";
+import { SoapContext } from "../../context/context.jsx";
+import CardProduct from "../../components/CardProduct.jsx";
 
 export const StoreView = () => {
   const { products } = useContext(SoapContext);

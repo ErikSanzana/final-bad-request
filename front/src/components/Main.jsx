@@ -1,4 +1,4 @@
-import Carousel from './Carousel'; // Importa el componente del carrusel
+import Carousel from './Carousel.jsx'; // Importa el componente del carrusel
 
 
 function Main() {

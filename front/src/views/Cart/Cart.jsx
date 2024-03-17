@@ -1,6 +1,6 @@
 import "./Cart.css"
 import { useContext } from "react";
-import { SoapContext } from "../../context/context";
+import { SoapContext } from "../../context/context.jsx";
 import CardProduct from "../../components/CardProduct.jsx";
 
 const ShoppingCart = () => {

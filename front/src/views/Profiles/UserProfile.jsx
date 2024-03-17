@@ -2,63 +2,59 @@ import Button from "react-bootstrap/esm/Button.js";
 import RegisterForm from "./../../components/RegisterForm.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ENDPOINT } from "../../context/config/constant.js";
-import { NavLink } from "../../components/Helpers/NavLink.jsx"
-// que funcione aca va, que se vea historial de productos, que se vea el formulario para editar datos. y que se vena sus propuios datos
+import { ENDPOINT, ENDPOINTPRODUCTS } from "../../context/config/constant.js";
+import { NavLink } from "../../components/Helpers/NavLink.jsx";
+import { SoapContext } from "./../../context/context.jsx";
+import { useContext } from "react";
 
 const UserProfile = () => {
+  const { dataLog, setDataLog } = useContext(SoapContext);
   const [history, setHistory] = useState([]);
   const [userData, setUserData] = useState(null);
-  console.log(userData);
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob25fc25vd0BuaWdodHdhdGNoLmNvbSIsImlhdCI6MTcxMDYyODc3MCwiZXhwIjoxNzEwNjMyMzcwfQ.2cpMh2waAoh_Yowz4hQErjTxLRfKoVfzybz9JHZN82A";
-  const userId = "1700001";
+
+  const token = dataLog.token;
+  // const userId = dataLog.id;
 
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${token}` }
   };
 
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        // `${ENDPOINT.adminUsers}/${userId}`
-        "https://backend-backup-3tm8.onrender.com/api/v1/admin/users/1700001",
+        ENDPOINT.user + `/users/${dataLog.id}`,
         config
-      ); // solicita para obtener los datos del usuario
-      setUserData(response.data.user); // Almacenar los datos del usuario en el estado
+      );
+      console.log(response.data.user);
+      setUserData(response.data.user);
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
   };
+
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(ENDPOINT.orderUser);
-      setHistory(response.data.order_history);
+      const response = await axios.get(ENDPOINTPRODUCTS + `/${dataLog.id}`);
+      setHistory(response.data);
     } catch (error) {
       console.error("Error", error);
     }
   };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []),
+    3000;
+
   useEffect(() => {
     fetchHistory();
-    fetchUserData();
-  }, []);
-
-  //   const whereIam = () => {
-  //     return true;
-  //   };
-
-  //   useEffect(() => {
-  //     whereIam();
-  //   });
-
-  // post axios
+  }, []),
+    3000;
 
   return (
     <>
       <section className="mainAdmin">
         <article className="dataView">
-          {/* ver sus propios datos, con un get  user su id map pa los datos */}
-        
           {userData && (
             <ul>
               <h6>Datos del usuario:</h6>
@@ -71,24 +67,30 @@ const UserProfile = () => {
         </article>
 
         <article className="dataView">
-        <NavLink to="/user/favorites">
+          <NavLink to="/user/favorites">
             <div>favorites </div>
-          </NavLink>       
-
+          </NavLink>
         </article>
 
         <article className="dataView">
           <div className="ListOfOrders">
             {/* usar axios y crear una lista con un map   get de buy_order y un map  */}
             <h6>Historial</h6>
-            <ul>
-              {history.map((order) => (
-                <li key={order.id}>
-                  {/* Muestrar detalles del historial de productos */}
-                  {order.product_code} - ${order.total_price}
-                </li>
-              ))}
-            </ul>
+            {history ? null :
+              <table>
+                <tr>
+                  <th>client_rut</th>
+                  <th>product_price</th>
+                  <th>product_amount</th>
+                  <th>total_price</th>
+                </tr>
+                {history.map((order, key) => (
+                  <tr key={key}>
+                    <th>order.client_rut</th> <th>order.product_price</th> <th>order.product_amount</th><th>order.total_price</th>
+                  </tr>
+                ))}
+              </table>
+            }
           </div>
         </article>
       </section>

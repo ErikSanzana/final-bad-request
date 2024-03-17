@@ -15,7 +15,7 @@ import ShoppingCart from "./views/Cart/Cart.jsx";
 import NotFound from "./views/NotFound/NotFound.jsx";
 import UserProfile from "./views/Profiles/UserProfile.jsx";
 import AdminProfile from "./views/Profiles/AdminProfile.jsx";
-import ProtectedRoutes from "./components/Helpers/UseAuth.jsx";
+// import ProtectedRoutes from "./components/Helpers/UseAuth.jsx";
 
 function App() {
   // const { id } = useParams();

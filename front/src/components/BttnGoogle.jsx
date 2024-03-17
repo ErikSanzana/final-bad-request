@@ -10,25 +10,28 @@ const ButtonGoogle = () => {
     const navigate = useNavigate()
 
   const validarTokenGoogle = async (credendialGOOGLE) => {
-    axios
-      .post(ENDPOINT.validarGogle, {
+     await axios
+      .post(
+        ENDPOINT.validarGogle, {
         google: { credential: credendialGOOGLE.credential }
       })
-      .then( async ({data}) => {
-        await setDataLog(data)
+      .then(({data}) => {
+        setDataLog(data)
         console.log("dato", data);
         window.sessionStorage.setItem("token", data.data);
+
         window.alert("Usuario identificado con éxito 😀.");
+
         //setDeveloper({})
         navigate('/')
       })
       .catch((error) => {
         console.error(error);
         console.log(error);
-        window.alert(`${error.message} 🙁.`);
+        // window.alert(`${error.message} 🙁.`);
       });
   };
-
+  
   return (
     <GoogleLogin
       onSuccess={(credentialResponse) => {

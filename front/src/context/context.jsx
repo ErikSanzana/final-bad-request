@@ -8,19 +8,17 @@ const SoapProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState();
   const [dataLog,setDataLog] = useState({})
-  console.log("veamos si esto resulta desde el context :", dataLog)
-  
 
-  const getAxios = () => {
+
+
+  const getAxios = async () => {
     try {
-      axios
+     await axios
         .get(
           ENDPOINT.products 
         )
         .then((response) => {
-          console.log(response);
-          // OJO!!!! add, detail, amount y Fav son para el carro de compras y para favoritos
-          //manejar amount segun stock (añadir logica si stock = 0 no comprar)
+          // console.log(response);
           setProducts(
             response.data.products.map((obj) => ({
               ...obj,
@@ -35,7 +33,6 @@ const SoapProvider = ({ children }) => {
           console.error("Error fetching products:", error);
         });
     } catch (error) {
-      //mejorar el catch error
       console.log(error);
     }
   };

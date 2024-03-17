@@ -7,20 +7,17 @@ const PostProducts = () => {
     // usar para postear los tags en la db
   };
 
-  necesitamos;
-  const forProduct = {
-    name: nombre,
-    description: descripcion,
-    price: precio,
-    stock: stock,
-    image_url: URL,
-    tags: fromOptionsFromDB
-  };
-  //  tags viene de lo que ponga el ADMIN en la DATABASE, es decir primero setear tags
+  // necesitamos;
+  // const forProduct = {
+  //   name: nombre,
+  //   description: descripcion,
+  //   price: precio,
+  //   stock: stock,
+  //   image_url: URL,
+  // };
   //https://www.youtube.com/watch?v=B5_xEqih_GA for upload images
   return (
       <>
-          <>add and errase tags: formulario? </>
       <Container>
         <Row>
           <Col>
@@ -30,13 +27,7 @@ const PostProducts = () => {
             </InputGroup>
           </Col>
             <Col>
-            <Form.Select aria-label="Default select example">
-              <option>map desde los tags de la DB </option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select>
-            export default SelectBasicExample;
+          
           </Col>
         </Row>
 

@@ -16,7 +16,7 @@ const CardProduct = ({
   fav,
   amount
 }) => {
-  const { setProducts } = useContext(SoapContext);
+  const {dataLog, setProducts } = useContext(SoapContext);
 
   const addToCart = (id) => {
     setProducts((cart) => {
@@ -124,9 +124,9 @@ const CardProduct = ({
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           {/* si trae texto de descripcion, entonces escribelo */}
-          {descripcion && <Card.Text>{descripcion}</Card.Text>}
+          {descripcion && dataLog.id && <Card.Text>{descripcion}</Card.Text>}
 
-          {title && (
+          {title && dataLog.id && (
             <div>
               <IconHeart filled={fav} />
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}

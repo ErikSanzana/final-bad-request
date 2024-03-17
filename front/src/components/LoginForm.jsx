@@ -1,23 +1,43 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ENDPOINT } from "../context/config/constant.js";
 import ButtonGoogle from "./BttnGoogle.jsx";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SoapContext } from "./../context/context.jsx";
 
 const LogIn = () => {
-  const {dataLog, setDataLogin } = useContext(SoapContext);
-
+  const navigate = useNavigate();
+  const { dataLog, setDataLog } = useContext(SoapContext);
+  console.log("seteo general", dataLog)
 
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
+
+  const postAxios = async (data) => {
+    try {
+      const response = await axios.post(ENDPOINT.login, data);
+      window.sessionStorage.setItem("data", JSON.stringify(response.data));
+      console.log("esto es win storage", window.sessionStorage);
+
+      window.alert("Usuario identificado con éxito 😀."); // alertswa2
+      setDataLog(response.data)
+
+      // navigate("/user");
+    } catch (error) {
+      console.error(error);
+      console.log(error);
+      window.alert(`${error.message} 🙁.`); // alertswa2
+    }
+  };
+
+
   const send = (data) => {
     Object.keys(data).forEach((key) => {
       if (typeof data[key] === "string") {
@@ -25,22 +45,7 @@ const LogIn = () => {
       }
     });
     console.log(data);
-
-    axios
-      .post(ENDPOINT.login, usuarioYaREgistrado)
-      .then(({ data }) => {
-        console.log("dato", data);
-        window.sessionStorage.setItem("token", data.token);
-        window.alert("Usuario identificado con éxito 😀.");
-        setDataLogin(data)
-        console.log("veamos si esto resulta:", dataLog)
-        //setDeveloper({})
-        //navigate('/perfil')
-      })
-      .catch(({ response: { dato } }) => {
-        console.error(dato);
-        window.alert(`${data.message} 🙁.`);
-      });
+    postAxios({ user: data });
   };
 
   return (

@@ -1,18 +1,27 @@
-export const URLBASE = "http://localhost:3000"
+export const URLBASE =`https://backend-backup-3tm8.onrender.com`
+const URLBACK = `/api/v1`
   
-  
+   // "http://localhost:3000
   // "https://backend-backup-3tm8.onrender.com";
+  //  https://backend-backup-3tm8.onrender.com
+  // /users/history/:id
 
+
+export const ENDPOINTPRODUCTS = {
+  history: URLBASE+URLBACK+`/users/history`
+}
 
 export const ENDPOINT = {
-  login: URLBASE + `/api/v1/login/user/login`,
-  registarUsuario: URLBASE + `/api/v1/user`,
-  products: URLBASE + `/api/v1/store/products`,
-  validarGogle: URLBASE + `/api/v1/google/user/login`
+  login: URLBASE + URLBACK + `/login/user/login`,
+  registarUsuario: URLBASE + URLBACK + `/user`,
+  user: URLBASE + URLBACK + `/admin`,
+  products: URLBASE + URLBACK + `/store/products`,
+  validarGogle: URLBASE + URLBACK + `/google/user/login`,
 };
 
 export const ADMINENDPOINT = {
-  users: URLBASE + `/api/v1/admin`,
-  products: URLBASE + `/api/v1/store/admin`
-
+  users: URLBASE + URLBACK + `/admin`,
+  products: URLBASE + URLBACK + `/store/admin`,
+  deleteUser: URLBASE + URLBACK + `/user`,
+  
 }
