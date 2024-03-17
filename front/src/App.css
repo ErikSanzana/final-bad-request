@@ -5,57 +5,23 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  /* background-image: url('./assets/img/fondocardback.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
   background-color: rgb(244, 242, 216);
-
-  }
-body {
-  margin: 10px;
-  padding: 10px;
-  height: 80px;
- /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana gráfica */
- /* Asegura que el footer se posicione correctamente */
-
-}
-.customNav{
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: rgb(74, 152, 71);
-  height: 70px;
-}
-
-.footer {
-  position: fixed; /* Cambia a 'absolute' si prefieres que el footer se desplace con el contenido */
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(74, 152, 71);
-  color: white;
+  color: rgb(42, 63, 62);
   text-align: center;
-  height: 55px;
-}
-.linkers{
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 3rem;
-
-}
-.linkers > a > div:hover {
-color: #0f471f;
-}
-.navBarImg{
-  max-width: 100%;
-  height: 50px;
-}
+  font-size: 1.3em;
+  display: block;
+  overflow-y: auto;
+  }
 
 p{
   margin: 0px;
 }
-.redes-sociales a {
-  color: #f5e8e8;
-  font-size: 20px; /* Ajusta el tamaño de los iconos según sea necesario */
-  margin-right: 10px; /* Añade un margen derecho entre los iconos para separarlos */
-}
+
 .section1{
   margin-top: 5px;
 }

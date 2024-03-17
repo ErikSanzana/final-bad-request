@@ -8,41 +8,47 @@ import { NavLink } from "./Helpers/NavLink.jsx";
 import imgNabar from "../assets/img/logo.webp";
 import LogoutButton from "./Logout.jsx";
 
+import "./Navbarapp.css";
+
 const Navbarapp = () => {
   const { dataLog, totalProducts } = useContext(SoapContext);
-console.log(dataLog)
+  console.log(dataLog);
   return (
-    <Navbar expand="lg" className="bg-success d-flex justify-content-around">
+    <Navbar
+      expand="lg"
+      className="BigNav bg-success d-flex justify-content-around"
+    >
       <Nav className="customNav">
-        <NavLink to="/">
+        <NavLink className="imgStore" to="/">
           <img src={imgNabar} className="navBarImg" alt="Vegan Soap img" />
           <p className="titleNavbar  text-white"> JABONESVEGAN</p>
         </NavLink>
 
         <div className="linkers">
+          
           <NavLink to="/store">
-            <div>Tienda</div>
+            <p>Tienda</p>
           </NavLink>
 
-          {!dataLog.id ? (
-            null
-          ) : (
-            <div>
-              <NavLink to="/user">
-                <div>perfil user </div>
-              </NavLink>
-              <NavLink to="/user/favorites">
-                <div>favorites </div>
-              </NavLink>
+          {!dataLog.id ? null : (
+            <NavLink to="/user/favorites">
+              <p>Favoritos  </p>
+            </NavLink>
+          )}
 
-              <NavLink to="/admn">
-                <div>admin </div>
-              </NavLink>
-            </div>
+          {!dataLog.id ? null : (
+            <NavLink to="/user">
+              <p>Prefil </p>
+            </NavLink>
+          )}
+          {!dataLog.id ? null : (
+          <NavLink to="/admn">
+            <p>ADM PANEL </p>
+          </NavLink>
           )}
 
           <NavLink to="/login">
-            <div>Inciar Sesión </div>
+            <p>Inciar Sesión </p>
           </NavLink>
         </div>
 
@@ -66,9 +72,8 @@ console.log(dataLog)
             )}
           </NavLink>
         )}
+        {!dataLog.id ? null : <LogoutButton />}
       </Nav>
-
-      {!dataLog.id ? null : <LogoutButton />}
     </Navbar>
   );
 };

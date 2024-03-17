@@ -7,6 +7,8 @@ import { NavLink } from "../../components/Helpers/NavLink.jsx";
 import { SoapContext } from "./../../context/context.jsx";
 import { useContext } from "react";
 
+import "./UserProfile.css"
+
 const UserProfile = () => {
   const { dataLog, setDataLog } = useContext(SoapContext);
   const [history, setHistory] = useState([]);
@@ -53,8 +55,8 @@ const UserProfile = () => {
 
   return (
     <>
-      <section className="mainAdmin">
-        <article className="dataView">
+      <section className="mainScreen">
+        <article className="dataViewUser dataUser">
           {userData && (
             <ul>
               <h6>Datos del usuario:</h6>
@@ -66,13 +68,13 @@ const UserProfile = () => {
           )}
         </article>
 
-        <article className="dataView">
+        <article className="dataViewUser favo">
           <NavLink to="/user/favorites">
-            <div>favorites </div>
+            <div>¡Veamos Tus Favoritos ! </div>
           </NavLink>
         </article>
 
-        <article className="dataView">
+        <article className="dataViewUser">
           <div className="ListOfOrders">
             {/* usar axios y crear una lista con un map   get de buy_order y un map  */}
             <h6>Historial</h6>

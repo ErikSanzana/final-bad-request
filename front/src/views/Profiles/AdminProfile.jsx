@@ -10,20 +10,21 @@ import { useState, useEffect } from "react";
 import BanForm from "../../components/BanForm.jsx";
 
 import "./AdminProfile.css";
+import PostProduct from "../../components/ProductPost.jsx";
 
 const AdminProfile = () => {
   const { dataLog, setDataLog } = useContext(SoapContext);
 
   const [users, setUsers] = useState([]);
   const [rut, setRut] = useState(dataLog.id);
-  console.log(rut)
+  console.log(rut);
 
   const token = dataLog.token;
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
   const getAxios = (data) => {
-    console.log(data)
+    console.log(data);
     try {
       axios
         .get(ADMINENDPOINT.users + `/users/${rut}`, config)
@@ -38,7 +39,6 @@ const AdminProfile = () => {
     } catch (error) {
       //mejorar el catch error
       console.log(error);
-
     }
   };
 
@@ -61,20 +61,22 @@ const AdminProfile = () => {
   return (
     <>
       <section className="mainAdmin">
-        <article className="usersRegistered"></article>
-        <article className="dataView">
-          <Form noValidate onSubmit={handleSubmit(send)}>
-            <InputGroup size="sm" className="mb-3">
-              <Form.Control
-                aria-label="Small"
-                aria-describedby="inputGroup-sizing-sm"
-                {...register("rut")}
-              />
-              <Button variant="primary" type="btn">
-                Submit
-              </Button>
-            </InputGroup>
-          </Form>
+        <article className="dataViewAdmin pCuadro">
+          <div className="pForm">
+            <Form noValidate onSubmit={handleSubmit(send)}>
+              <InputGroup size="sm" className="mb-3">
+                <Form.Control
+                  aria-label="Small"
+                  aria-describedby="inputGroup-sizing-sm"
+                  {...register("rut")}
+                />
+
+                <Button variant="primary" type="btn">
+                  Submit
+                </Button>
+              </InputGroup>
+            </Form>
+          </div>
           <div>
             <ul>
               <li>{users.email}</li>
@@ -91,11 +93,17 @@ const AdminProfile = () => {
           </div>
         </article>
 
-        <article className="dataView">
+        <article className="dataViewAdmin">
           <BanForm />
         </article>
 
-        <article className="dataView">Post product- reusarformulario ?</article>
+        <article className="dataViewAdmin">
+          
+          <PostProduct />
+          
+
+
+        </article>
       </section>
       <div></div>
     </>

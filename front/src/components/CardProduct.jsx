@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { SoapContext } from "../context/context";
 import IconHeart from "../assets/icon/IconHeart";
 import { forOrder, addUnit, lessUnit } from "./Helpers/Alerts.jsx";
+import "./CardProduct.css";
 
 const CardProduct = ({
   descripcion,
@@ -14,9 +15,10 @@ const CardProduct = ({
   valor,
   add,
   fav,
-  amount
+  amount,
+  login = false
 }) => {
-  const {dataLog, setProducts } = useContext(SoapContext);
+  const { dataLog, setProducts } = useContext(SoapContext);
 
   const addToCart = (id) => {
     setProducts((cart) => {
@@ -119,22 +121,22 @@ const CardProduct = ({
 
   return (
     <>
-      <Card className="card" id={id} key={id}>
-        <Card.Img variant="top" src={url_imagen} />
+      <Card className="cardCss" id={id} key={id}>
+        <Card.Img className="imgCardCss" variant="top" src={url_imagen} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           {/* si trae texto de descripcion, entonces escribelo */}
           {descripcion && dataLog.id && <Card.Text>{descripcion}</Card.Text>}
 
           {title && dataLog.id && (
-            <div>
+            <div className="pCorazon">
               <IconHeart filled={fav} />
               {/* si hay stock ponlo junto con el precio (formateado a peso chileno) */}
               {stock ? (
                 <div>
                   <span> Stock:{stock}&nbsp;</span>
                   <span>
-                    {" "}
+
                     &nbsp;&nbsp;&nbsp;&nbsp; Valor:
                     {Intl.NumberFormat("es-CL", {
                       style: "currency",
@@ -145,66 +147,71 @@ const CardProduct = ({
               ) : (
                 <span> sin stock</span>
               )}
-
-              {/* añade al carro y si ya esta en el carro, entonces avisa y da la opcion de eliminar */}
-              {!add ? (
-                <Button variant="success" onClick={() => addToCart(id)}>
-                  añade al carro
-                </Button>
-              ) : (
-                <div>
-                  {" "}
-                  <span> en el carro! </span>
-                  <Button variant="success" onClick={() => removeFromCart(id)}>
-                    Eliminar
+              <div className="pBtn">
+                {/* añade al carro y si ya esta en el carro, entonces avisa y da la opcion de eliminar */}
+                {!add ? (
+                  <Button variant="success" onClick={() => addToCart(id)}>
+                    🛒
                   </Button>
-                </div>
-              )}
+                ) : (
 
-              {/* añadir unidades al carro, visible solo si se añadio algo previamente (se puede condicionar a otra cosa para que no aparezca a cada rato... o dejarlo bonito? ) */}
-
-              {!add ? null : (
-                <div className="customAddMinus">
-                  <p>Cantidad:</p>
-                  <div className="customContainerCard">
-                    <button
-                      className="success"
-                      onClick={() => {
-                        lessProducts(id);
-                        removeIfLessThanOne(id);
-                      }}
+                    <Button
+                      variant="success"
+                      onClick={() => removeFromCart(id)}
                     >
-                      -
-                    </button>
+                      🗑
+                    </Button>
+ 
+                )}
 
-                    <p className="textAmount">{amount}</p>
+                {/* añadir unidades al carro, visible solo si se añadio algo previamente (se puede condicionar a otra cosa para que no aparezca a cada rato... o dejarlo bonito? ) */}
 
-                    <button className="success" onClick={() => moreProduct(id)}>
-                      +
-                    </button>
+                {!add ? null : (
+                  <div className="customAddMinus">
+                    {/* <p>Cantidad:</p> */}
+                    <div className="customContainerCard">
+                      <button
+                        className="success"
+                        onClick={() => {
+                          lessProducts(id);
+                          removeIfLessThanOne(id);
+                        }}
+                      >
+                        ➖
+                      </button>
+
+                      <p className="textAmount">{amount}</p>
+
+                      <button
+                        className="success"
+                        onClick={() => moreProduct(id)}
+                      >
+                        ➕
+                      </button>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* añade a favoritos, marca el corazon de rojo, y si ya es favorito, quitalo  */}
+                {/* añade a favoritos, marca el corazon de rojo, y si ya es favorito, quitalo  */}
 
-              {fav ? (
-                <Button
-                  variant="success"
-                  className="button1"
-                  onClick={() => addToFav(id)}
-                >
-                  Quitar de favoritos
-                </Button>
-              ) : (
-                <Button
-                  variant="success"
-                  className="button1"
-                  onClick={() => addToFav(id)}
-                >
-                  Añadir a favoritos
-                </Button>
-              )}
+                {fav ? (
+                  <Button
+                    variant="success"
+                    className="button1"
+                    onClick={() => addToFav(id)}
+                  >
+                    🖤🗑
+                  </Button>
+                ) : (
+                  <Button
+                    variant="success"
+                    className="button1"
+                    onClick={() => addToFav(id)}
+                  >
+                    💖
+                  </Button>
+                )}
+              </div>
             </div>
           )}
         </Card.Body>

@@ -21,10 +21,6 @@ function App() {
   // const { id } = useParams();
   // const { product_code } = useParams();
 
-  function refreshPage() {
-    window.location.reload(false);
-  };
-
   return (
     <>
       <Navbarapp />
@@ -52,9 +48,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} exact />
       </Routes>
-      <div>
-      <button  onClick={refreshPage}>Click to reload!</button>
-    </div>
+
       <Footer />
     </>
   );

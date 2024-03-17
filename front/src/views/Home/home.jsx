@@ -3,13 +3,15 @@ import Carrucel from "../../components/Carousel";
 
 const Home = () => {
   return (
-    <>
-
+    <div className="homeDiv">
+      
+      <div className="pCarrusel">
+        
       <Carrucel />
-      <div className="d-flex  flex-wrap justify-content-center ">
-        {/* aqui componete de productos para el main */}
-      </div>
-    </>
+
+ </div>
+
+    </div>
   );
 };
 

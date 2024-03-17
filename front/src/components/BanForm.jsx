@@ -52,7 +52,7 @@ const BanForm = () => {
   return (
     <>
       <Container fluid="xl">
-        <div className="p-1">
+        <div className="p-1 banForm" >
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
               <Form.Group as={Col} md="4" controlId="rut">
