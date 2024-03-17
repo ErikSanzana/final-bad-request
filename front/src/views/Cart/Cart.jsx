@@ -1,3 +1,4 @@
+import "./Cart.css"
 import { useContext } from "react";
 import { SoapContext } from "../../context/context";
 import CardProduct from "../../components/CardProduct.jsx";
