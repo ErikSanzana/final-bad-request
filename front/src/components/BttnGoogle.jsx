@@ -16,15 +16,16 @@ const ButtonGoogle = () => {
       })
       .then( async ({data}) => {
         await setDataLog(data)
-        // console.log("dato", data);
+        console.log("dato", data);
         window.sessionStorage.setItem("token", data.data);
         window.alert("Usuario identificado con éxito 😀.");
         //setDeveloper({})
         navigate('/')
       })
-      .catch((dato) => {
-        console.error(dato);
-        window.alert(`${data.message} 🙁.`);
+      .catch((error) => {
+        console.error(error);
+        console.log(error);
+        window.alert(`${error.message} 🙁.`);
       });
   };
 
