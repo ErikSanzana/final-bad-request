@@ -19,7 +19,6 @@ const BanForm = () => {
     });
     console.log(data);
   };
-  // pasar por prop a la vista que corresponda para mandar por axios los cambios
 
   return (
     <>
@@ -27,27 +26,30 @@ const BanForm = () => {
         <div className="p-1">
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="name">
+              <Form.Group as={Col} md="4" controlId="rut">
                 <Form.Label>rut</Form.Label>
                 <Form.Control
                   required
                   type="text"
-                  placeholder="Nombre"
+                  placeholder="rut"
                   size="sm"
                   {...register("rut")}
-                  autocomplete="section-red shipping email"
+                  autoComplete="section-red shipping email"
                 />
               </Form.Group>
             </Row>
             <Row className="mb-3">
-            <Form.Select aria-label="Ban ?">
-      <option>Let the hammer fall?</option>
-      <option value="false">no banear</option>
-      <option value="true">BAN HAMMER </option>
-    </Form.Select>
+              <Form.Select
+                aria-label="¿Desea Bannear"
+                {...register("is_banned")}
+              >
+                <option>Open this select menu</option>
+                <option value= "false">no banear</option>
+                <option value= "true">bannear</option>
+              </Form.Select>
             </Row>
             <Button variant="success" type="btn btn-success">
-              ¡Registrame!
+              BANNEAR
             </Button>
           </Form>
         </div>

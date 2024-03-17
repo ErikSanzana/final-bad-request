@@ -4,6 +4,10 @@ import { User } from "../../components/User.jsx";
 import LoginForm from "../../components/LoginForm.jsx";
 
 export const LogInView = () => {
+
+
+
+  
   return (
     <>
       <section className="section1">

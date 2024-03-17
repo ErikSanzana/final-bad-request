@@ -7,6 +7,9 @@ export const SoapContext = createContext();
 const SoapProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState();
+  const [dataLog,setDataLog] = useState({})
+  console.log("veamos si esto resulta desde el context :", dataLog)
+  
 
   const getAxios = () => {
     try {
@@ -60,6 +63,8 @@ const SoapProvider = ({ children }) => {
         setProducts,
         totalProducts,
         setTotalProducts,
+        dataLog,
+        setDataLog
       }}
     >
       {children}

@@ -6,9 +6,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ENDPOINT } from "../context/config/constant.js";
 import ButtonGoogle from "./BttnGoogle.jsx";
-
+import { useContext } from "react";
+import { SoapContext } from "./../context/context.jsx";
 
 const LogIn = () => {
+  const {dataLog, setDataLogin } = useContext(SoapContext);
+
+
   const {
     register,
     handleSubmit,
@@ -28,6 +32,8 @@ const LogIn = () => {
         console.log("dato", data);
         window.sessionStorage.setItem("token", data.token);
         window.alert("Usuario identificado con éxito 😀.");
+        setDataLogin(data)
+        console.log("veamos si esto resulta:", dataLog)
         //setDeveloper({})
         //navigate('/perfil')
       })

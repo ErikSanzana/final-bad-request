@@ -7,7 +7,10 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import { ENDPOINT } from "../context/config/constant";
 
-const RegisterForm = ({ userView, registerView, adminView }) => {
+const RegisterForm = ({ userView=false, registerView=false, adminView=false }) => {
+
+  console.log( userView, registerView,adminView )
+  
   const {
     register,
     handleSubmit,
@@ -21,7 +24,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
     });
     console.log(data);
 
-    if ((userView = true)) {
+    if ((userView == true)) {
       // agregar id = rut que venga del weon conectado
       //token del weon conectado (en use estate)
       axios
@@ -36,7 +39,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
         });
     }
 
-    if ((registerView = true)) {
+    if ((registerView == true)) {
       axios
         .post(ENDPOINT.registarUsuario, data)
         .then(() => {
@@ -49,7 +52,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
         });
     }
 
-    if ((adminView = true)) {
+    if ((adminView == true)) {
       axios
         .put(ENDPOINT.registarUsuario + `/${id}`, data)
         .then(() => {
@@ -62,7 +65,7 @@ const RegisterForm = ({ userView, registerView, adminView }) => {
         });
     }
   };
-  // pasar por prop a la vista que corresponda para mandar por axios los cambios
+ 
 
   return (
     <>
