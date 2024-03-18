@@ -1,9 +1,12 @@
+import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { ADMINENDPOINT } from "../context/config/constant";
-import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const PostProduct = () => {
+
+
   const {
     register,
     handleSubmit,
@@ -16,18 +19,19 @@ const PostProduct = () => {
         data[key] = data[key].trim();
       }
     });
+    console.log(data)
+    try {
+      const response =  axios.post(ADMINENDPOINT.CProduct, data)
 
-    axios
-    .post(ADMINENDPOINT.CProduct, data)
-    .then(() => {
-      window.alert("Usuario registrado con éxito 😀.");
-      navigate("/login");
-    })
-    .catch(({ response: { data } }) => {
-      console.error(data);
-      window.alert(`${data.message} 🙁.`);
-    });
+      window.alert("producto indexado con éxito 😀.");
+
+    } catch (error) {
+      
+      console.error(error);
+      window.alert(`${error.message} 🙁.`);
+    }
   };
+
 
   return (
     <Form noValidate onSubmit={handleSubmit(send)}>

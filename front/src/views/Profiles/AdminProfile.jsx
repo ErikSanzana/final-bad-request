@@ -16,27 +16,25 @@ const AdminProfile = () => {
   const { dataLog, setDataLog } = useContext(SoapContext);
 
   const [users, setUsers] = useState([]);
-  const [rut, setRut] = useState(dataLog.id);
+  const [rut, setRut] = useState();
   console.log(rut);
 
   const token = dataLog.token;
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
-  const getAxios = (data) => {
-    console.log(data);
+
+  const getAxios = async (rut) => {
+    console.log(rut);
     try {
-      axios
-        .get(ADMINENDPOINT.users + `/users/${rut}`, config)
-        .then((response) => {
-          console.log(response);
-          setUsers(response.data.user);
-        })
-        .catch((error) => {
-          console.error("Error fetching products:", error);
-        });
-      console.log("pasas por response.data");
+      const response = await axios.get(
+        ADMINENDPOINT.users + `/users/${rut}`,
+        config
+      );
+      console.log(response);
+      setUsers(response.data.user);
     } catch (error) {
+      //!response = alert user not found
       //mejorar el catch error
       console.log(error);
     }
@@ -54,8 +52,7 @@ const AdminProfile = () => {
       }
     });
     setRut(data.rut);
-    console.log(data);
-    getAxios(rut);
+    getAxios(data.rut);
   };
 
   return (
@@ -72,7 +69,7 @@ const AdminProfile = () => {
                 />
 
                 <Button variant="primary" type="btn">
-                  Submit
+                  buscar
                 </Button>
               </InputGroup>
             </Form>
@@ -83,7 +80,8 @@ const AdminProfile = () => {
               <li>{users.name}</li>
               <li>{users.last_name}</li>
               <li>{users.rut}</li>
-
+              <li>{users.is_banned}</li>
+              
               {users.is_banned ? (
                 <li> BANEADO </li>
               ) : (
@@ -98,15 +96,10 @@ const AdminProfile = () => {
         </article>
 
         <article className="dataViewAdmin">
-          
           <PostProduct />
-          
-
-
         </article>
       </section>
-      <div>
-      </div>
+      <div></div>
     </>
   );
 };

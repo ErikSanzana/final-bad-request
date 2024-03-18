@@ -46,7 +46,7 @@ const RegisterForm = ({
         .put(ENDPOINT.registarUsuario + `/${id}`, data)
         .then(() => {
           window.alert("Usuario editado con éxito 😀.");
-          navigate("/login");
+          navigate("/user");
         })
         .catch(({ response: { data } }) => {
           console.error(data);

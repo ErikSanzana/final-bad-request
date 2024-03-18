@@ -25,14 +25,13 @@ const Navbarapp = () => {
         </NavLink>
 
         <div className="linkers">
-          
           <NavLink to="/store">
             <p>Tienda</p>
           </NavLink>
 
           {!dataLog.id ? null : (
             <NavLink to="/user/favorites">
-              <p>Favoritos  </p>
+              <p>Favoritos </p>
             </NavLink>
           )}
 
@@ -41,18 +40,17 @@ const Navbarapp = () => {
               <p>Prefil </p>
             </NavLink>
           )}
-          {!dataLog.rol==="admin" ?  (
-          <NavLink to="/admn">
-            <p>ADM PANEL </p>
+          {dataLog.rol === "admin" ? (
+            <NavLink to="/admn">
+              <p>ADM PANEL </p>
             </NavLink>
-            
-          )
-          : null
-          }
+          ) : null}
 
-          <NavLink to="/login">
-            <p>Inciar Sesión </p>
-          </NavLink>
+          {!dataLog.id ?  (
+            <NavLink to="/login">
+              <p>Inciar Sesión </p>
+            </NavLink>
+          ):null  }
         </div>
 
         {!dataLog.id ? null : (

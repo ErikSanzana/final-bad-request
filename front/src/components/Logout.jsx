@@ -6,13 +6,10 @@ import { SoapContext } from "../context/context.jsx";
 
 export const LogoutButton = () => {
   const { setDataLog } = useContext(SoapContext);
-
-
     const navigate = useNavigate()
-    const{logout} = useAuth0()
+    // const{logout} = useAuth0()
     return (<button onClick={
-        () => logout(navigate('/') && setDataLog({})
-    || { returnTo: window.location.origin })
+        () => (navigate("/") , window.location.reload() , setDataLog({}))
     
     }>Logout</button>
     )

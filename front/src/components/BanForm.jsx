@@ -24,23 +24,25 @@ const BanForm = () => {
       }
     });
     console.log(data);
-    
+
     const putAxios = async (data) => {
+      const payload = {
+        user: {
+          is_banned: data.is_banned
+        }
+      };
+      console.log(payload);
       const config = {
         headers: { Authorization: `Bearer ${dataLog.token}` }
       };
       console.log(data);
       try {
-      await axios
-          .put(ADMINENDPOINT.deleteUser + `/${data.rut}`,{is_banned: data.is_banned}, config)
-          .then((response) => {
-            console.log(response);
-            setUsers(response.data.user);
-          })
-          .catch((error) => {
-            console.error("Error fetching products:", error);
-          });
-        console.log("pasas por response.data");
+        const response = await axios.put(
+          ADMINENDPOINT.deleteUser + `/${data.rut}`,
+          data,
+          config
+        );
+        console.log(response.data.user);
       } catch (error) {
         //mejorar el catch error
         console.log(error);
@@ -52,7 +54,7 @@ const BanForm = () => {
   return (
     <>
       <Container fluid="xl">
-        <div className="p-1 banForm" >
+        <div className="p-1 banForm">
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
               <Form.Group as={Col} md="4" controlId="rut">

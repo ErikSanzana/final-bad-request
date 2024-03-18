@@ -10,10 +10,9 @@ import { useContext } from "react";
 // para bloquear = https://reactrouter.com/en/6.22.2/hooks/use-blocker
 // para reglasd e auth = https://www.youtube.com/watch?v=fh96kIBOM24
 const useAuth = () => {
-  const { dataLog, setDataLog } = useContext(SoapContext);
+  const { dataLog} = useContext(SoapContext);
   console.log(dataLog);
   const logged = dataLog.token ? true : false 
-  console.log(logged)
   // forma 1
   const user = { loggedIn: logged, isBanned: dataLog.status }; 
   const bannHammer = <Navigate to="/yushalNotpas" />; 
