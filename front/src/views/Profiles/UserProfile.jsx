@@ -35,14 +35,24 @@ const UserProfile = () => {
   };
 
   const fetchHistory = async () => {
-    try {
-      const response = await axios.get(ENDPOINTPRODUCTS + `/${dataLog.id}`);
-      setHistory(response.data);
-    } catch (error) {
-      console.error("Error", error);
+    if (dataLog.rol === admin) {
+      try {
+        const response = await axios.get(ENDPOINTPRODUCTS + `/${dataLog.id}`);
+        setHistory(response.data);
+      } catch (error) {
+        console.error("Error", error);
+      }
     }
-  };
 
+    if (dataLog.rol === user) {
+      try {
+        const response = await axios.get(ENDPOINTPRODUCTS + `/${dataLog.id}`);
+        setHistory(response.data);
+      } catch (error) {
+        console.error("Error", error);
+      }
+    };
+  }
   useEffect(() => {
     fetchUserData();
   }, []),
