@@ -7,7 +7,7 @@ const ShoppingCart = () => {
   const { products } = useContext(SoapContext);
 
   return (
-    <div className="p-3 d-flex justify-content-center">
+    <div className="p-3 d-flex justify-content-center pCart">
       {products
         .filter((product) => product.add == true)
         .map((product, key) => (

@@ -5,7 +5,7 @@
     border: 1px solid black;
     border-radius: 5px;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 
     repeat( 
         auto-fit, 
@@ -44,4 +44,7 @@
 }
 
 
-
+.pBoxRegister{
+    display: flex;
+justify-content: center;
+}

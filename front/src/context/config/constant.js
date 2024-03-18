@@ -8,7 +8,9 @@ const URLBACK = `/api/v1`
 
 
 export const ENDPOINTPRODUCTS = {
-  history: URLBASE+URLBACK+`/users/history`
+  history: URLBASE + URLBACK + `/store/users/history`,//get
+  allFavorites: URLBASE + URLBACK + `/user/favorites`, //post
+  singleUserFav: URLBASE + URLBACK + `/favorite/like`,//get
 }
 
 export const ENDPOINT = {
@@ -23,5 +25,13 @@ export const ADMINENDPOINT = {
   users: URLBASE + URLBACK + `/admin`,
   products: URLBASE + URLBACK + `/store/admin`,
   deleteUser: URLBASE + URLBACK + `/user`,
+  CProduct: URLBASE + URLBACK + `/store/admin/products`,
+  UDProduct: URLBASE + URLBACK + `/store/admin/product`,
   
+}
+
+export const USEREDNPOINT = {
+  addres: URLBASE + URLBACK + `/user/address`,
+  cart: URLBASE + URLBACK + `/store/user/cart`,
+  order: URLBASE + URLBACK + `/store/user/order`
 }

@@ -7,7 +7,7 @@ import { NavLink } from "../../components/Helpers/NavLink.jsx";
 import { SoapContext } from "./../../context/context.jsx";
 import { useContext } from "react";
 
-import "./UserProfile.css"
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const { dataLog, setDataLog } = useContext(SoapContext);
@@ -59,7 +59,7 @@ const UserProfile = () => {
         <article className="dataViewUser dataUser">
           {userData && (
             <ul>
-              <h6>Datos del usuario:</h6>
+              <h6>Mis Datos:</h6>
               <li>RUT: {userData.rut}</li>
               <li>Nombre: {userData.name}</li>
               <li>Apellido: {userData.last_name}</li>
@@ -78,7 +78,7 @@ const UserProfile = () => {
           <div className="ListOfOrders">
             {/* usar axios y crear una lista con un map   get de buy_order y un map  */}
             <h6>Historial</h6>
-            {history ? null :
+            {history ? null : (
               <table>
                 <tr>
                   <th>client_rut</th>
@@ -88,13 +88,19 @@ const UserProfile = () => {
                 </tr>
                 {history.map((order, key) => (
                   <tr key={key}>
-                    <th>order.client_rut</th> <th>order.product_price</th> <th>order.product_amount</th><th>order.total_price</th>
+                    <th>order.client_rut</th> <th>order.product_price</th>{" "}
+                    <th>order.product_amount</th>
+                    <th>order.total_price</th>
                   </tr>
                 ))}
               </table>
-            }
+            )}
           </div>
         </article>
+      </section>
+      
+      <section className="pBoxRegister">
+        <RegisterForm userView={true} />
       </section>
     </>
   );

@@ -29,14 +29,13 @@ const LogIn = () => {
       window.alert("Usuario identificado con éxito 😀."); // alertswa2
       setDataLog(response.data)
 
-      // navigate("/user");
+      navigate("/user");
     } catch (error) {
       console.error(error);
       console.log(error);
       window.alert(`${error.message} 🙁.`); // alertswa2
     }
   };
-
 
   const send = (data) => {
     Object.keys(data).forEach((key) => {
@@ -51,7 +50,7 @@ const LogIn = () => {
   return (
     <Container fluid>
       <Form className="formlog" onSubmit={handleSubmit(send)}>
-        <Form.Group className="mb-4" controlId="basicEmail" noValidate>
+        <Form.Group className="mb-4 pInputMail" controlId="basicEmail" noValidate>
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"

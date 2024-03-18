@@ -41,11 +41,14 @@ const Navbarapp = () => {
               <p>Prefil </p>
             </NavLink>
           )}
-          {!dataLog.rut == 123456789  ? null : (
+          {!dataLog.rol==="admin" ?  (
           <NavLink to="/admn">
             <p>ADM PANEL </p>
-          </NavLink>
-          )}
+            </NavLink>
+            
+          )
+          : null
+          }
 
           <NavLink to="/login">
             <p>Inciar Sesión </p>

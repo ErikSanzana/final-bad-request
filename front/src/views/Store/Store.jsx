@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { SoapContext } from "../../context/context.jsx";
 import CardProduct from "../../components/CardProduct.jsx";
+
 import "./Store.css"
+
 export const StoreView = () => {
   const { products } = useContext(SoapContext);
   return (
     <div
-      className="p-3 m-3 d-flex justify-content-between  storeMain"
+      className="p-3 m-3 storeMain"
     >
       {products.map((product, key) => (
         <CardProduct

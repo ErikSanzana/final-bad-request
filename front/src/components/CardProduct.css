@@ -11,11 +11,10 @@
 }
 
 .card-body{
-
     grid-column: 1 / 1;
     grid-row: 1 / 2;
     align-self: center;
-
+    font-size: 0.8rem;
 }
 
 
@@ -45,7 +44,7 @@
 }
 
 .pBtn{
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -53,6 +52,9 @@
     justify-items: center;
     height: 5rem;
     width: 85%;
+}
+.pBtn button{
+    font-size: 0.7rem;
 }
 
 .customAddMinus{
@@ -64,5 +66,8 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+}
 
+.pDesc{
+    font-size: 0.7rem;
 }

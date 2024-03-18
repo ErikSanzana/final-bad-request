@@ -2,13 +2,15 @@
 import { useEffect } from "react";
 import RegisterForm from "../../components/RegisterForm.jsx";
 
+import "./ResgiterView.css"
+
 export const RegisterView = () => {
 
  
 
   return (
     <>
-      <div className="d-inline-flex justify-content-center border border-success p-1 mt-4 rounded bg-primary-subtle ">
+      <div className="pContainerReg  p-1 mt-4 ">
         <RegisterForm registerView={true} />
       </div>
     </>

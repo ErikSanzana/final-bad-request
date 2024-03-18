@@ -2,15 +2,12 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
   color-scheme: light dark;
-  /* background-color: #242424; */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  overflow-y: auto;
 }
 
 a {
@@ -50,20 +47,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-
-/* .card {
-  /* Asegúrate de que el contenido dentro de la tarjeta no afecte al fondo */
-  /* background-color: transparent;
-  align-items: center; */
-  /* Ajusta el color de fondo según sea necesario */
-/* } */ 
-/* 
-.formlog {
-  width: 400px;
-  height: 300px;
-  margin-top: 10px;
-} */
 
 h1 {
   font-size: 3.2em;

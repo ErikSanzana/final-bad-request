@@ -3,17 +3,12 @@ import { NavLink } from "react-router-dom";
 import { User } from "../../components/User.jsx";
 import LoginForm from "../../components/LoginForm.jsx";
 
+import "./LogInView.css";
 export const LogInView = () => {
-
-
-
-  
   return (
     <>
-      <section className="section1">
+      <section className="LogInView">
         <div>
-          <User />
-
           <NavLink to="/register">
             <Button variant="success" type="btn btn-success">
               {" "}
@@ -22,9 +17,11 @@ export const LogInView = () => {
           </NavLink>
         </div>
 
-        <div className="d-inline-flex justify-content-center border border-5 p-2 mt-4 rounded bg-primary-subtle">
+        <div className="p-2 mt-4 pLogin">
           <LoginForm />
         </div>
+
+        <User />
       </section>
     </>
   );

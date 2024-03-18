@@ -105,7 +105,8 @@ const AdminProfile = () => {
 
         </article>
       </section>
-      <div></div>
+      <div>
+      </div>
     </>
   );
 };

@@ -6,32 +6,47 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
 import { ENDPOINT } from "../context/config/constant";
+import { useNavigate } from "react-router-dom";
 
-const RegisterForm = ({ userView=false, registerView=false, adminView=false }) => {
+import "./RegisterForm.css";
 
-  console.log( userView, registerView,adminView )
-  
+const RegisterForm = ({
+  userView = false,
+  registerView = false,
+  adminView = false
+}) => {
+  const navigate = useNavigate();
+  console.log(userView, registerView, adminView);
+
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
+
   const send = (data) => {
     Object.keys(data).forEach((key) => {
       if (typeof data[key] === "string") {
         data[key] = data[key].trim();
       }
     });
+
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("password2").value;
+
+    if (password !== confirmPassword) {
+      window.alert("Las contraseñas no son iguales."); //swa2
+      return;
+    }
+
     console.log(data);
 
-    if ((userView == true)) {
-      // agregar id = rut que venga del weon conectado
-      //token del weon conectado (en use estate)
+    if (userView == true) {
       axios
         .put(ENDPOINT.registarUsuario + `/${id}`, data)
         .then(() => {
           window.alert("Usuario editado con éxito 😀.");
-          //navigate('/login')
+          navigate("/login");
         })
         .catch(({ response: { data } }) => {
           console.error(data);
@@ -39,12 +54,12 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
         });
     }
 
-    if ((registerView == true)) {
+    if (registerView == true) {
       axios
         .post(ENDPOINT.registarUsuario, data)
         .then(() => {
           window.alert("Usuario registrado con éxito 😀.");
-          //navigate('/login')
+          navigate("/login");
         })
         .catch(({ response: { data } }) => {
           console.error(data);
@@ -52,12 +67,12 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
         });
     }
 
-    if ((adminView == true)) {
+    if (adminView == true) {
       axios
         .put(ENDPOINT.registarUsuario + `/${id}`, data)
         .then(() => {
           window.alert("ADMIN editado con éxito 😀.");
-          //navigate('/login')
+          navigate("/login");
         })
         .catch(({ response: { data } }) => {
           console.error(data);
@@ -65,12 +80,11 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
         });
     }
   };
- 
 
   return (
     <>
-      <Container fluid="xl">
-        <div className="p-1">
+      <Container fluid="xl" className={ registerView? "pPersonalContainer" : "pUpdateContainer"}>
+        <div className="p-1 pFormReg">
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
               <Form.Group as={Col} md="4" controlid="name">
@@ -81,7 +95,7 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
                   placeholder="Nombre"
                   size="sm"
                   {...register("name")}
-                  autoComplete="section-red shipping email"
+                  autoComplete="section-red shipping name"
                 />
               </Form.Group>
 
@@ -93,7 +107,7 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
                   placeholder="Apellido"
                   size="sm"
                   {...register("last_name")}
-                  autoComplete="section-red shipping email"
+                  autoComplete="section-red shipping last_name"
                 />
               </Form.Group>
               {userView ? null : (
@@ -136,51 +150,75 @@ const RegisterForm = ({ userView=false, registerView=false, adminView=false }) =
                 />
               </Form.Group>
 
-              <Form.Group as={Col} htmlFor="start" controlid="dateOfBirth">
+              <Form.Group
+                as={Col}
+                htmlFor="start"
+                controlid="dateOfBirth"
+                className="pInputs"
+              >
                 <Form.Label>Fecha de nacimiento:</Form.Label>
-                <br></br>
                 <input
+                  className="pInptDate"
                   type="datetime-local" // Cambiado a datetime-local para incluir la hora
                   name="birthDate" // Cambiado el nombre del campo
                   min="1900-01-01T00:00" // Formato adecuado para datetime-local
                   max="2024-12-31T23:59" // Formato adecuado para datetime-local
+                  value="1901-01-01 00:00"
+                  autoComplete="section-red shipping birth_day"                
                   {...register("birth_date")}
                 />{" "}
                 <br></br>
-                <span> para efectos de carta astral (no obligatorio) </span>
+                {userView ? null : (
+                  <span> para efectos de carta astral (no obligatorio) </span>
+                )}
               </Form.Group>
             </Row>
 
-            <Row className="justify-content-md-center">
-              <Form.Group as={Col} xs lg="2">
-                <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+            <Row className="justify-content-sm-center pBox">
+              <Form.Group xs lg="2" className="pPasword">
+                <Form.Label htmlFor="inputPassword5">Contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  id="inputPassword5"
+                  id="password"
                   aria-describedby="passwordHelpBlock"
-                  placeholder="Ingrese su contraseña"
+                  placeholder="contraseña"
+                  autoComplete="section-red shipping password"
+                
                   {...register("password")}
                 />
-                <Form.Text id="passwordHelpBlock" muted>
-                  Tu contraseña debe tener entre 6 a 255 caracteres, numeros y
-                  letras, sin espacios, caracteres especiales, utf-8 y no
-                  contener emojis.
-                </Form.Text>
+                {userView || adminView ? null : (
+                  <Form.Text id="passwordHelpBlock" muted>
+                    Tu contraseña debe tener entre 6 a 255 caracteres, numeros y
+                    letras, sin espacios, caracteres especiales, utf-8 y no
+                    contener emojis.
+                  </Form.Text>
+                )}
 
-                <Form.Label htmlFor="inputPassword6">Password</Form.Label>
-
-                {/* <Form.Control
+                <Form.Label htmlFor="inputPassword6">
+                  Repita su contraseña
+                </Form.Label>
+                <Form.Control
                   type="password"
-                  id="inputPassword6"
+                  id="password2"
                   aria-describedby="passwordHelpBlock"
-                  placeholder="Repite la contraseña "
-                /> */}
+                  placeholder="repite contraseña "
+                  autoComplete="section-red shipping password2"
+
+                />
               </Form.Group>
             </Row>
 
-            <Button variant="success" type="btn btn-success">
-              ¡Registrame!
-            </Button>
+            {registerView ? (
+              <Button variant="success" type="btn btn-success">
+                ¡Registrame!
+              </Button>
+            ) : null}
+
+            {adminView || userView ? (
+              <Button variant="success" type="btn btn-success">
+                actualizar datos
+              </Button>
+            ) : null}
           </Form>
         </div>
       </Container>

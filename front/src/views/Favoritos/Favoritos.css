@@ -1,13 +1,16 @@
-.imgNabar {
-    width: 10%;
-    align-self: flex-start;
-  }
-  
-  .navbar-nav {
-      align-items: center;;
-  }
-  
-  .carousel-image {
-    width: 200px;
-    height: auto; 
-  }
+
+  .favoritosView{
+    margin: 3px;
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 
+    repeat( 
+        auto-fit, 
+        minmax(150px, 1fr)
+        );
+    gap: 1rem;
+}
+

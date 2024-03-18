@@ -126,7 +126,7 @@ const CardProduct = ({
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           {/* si trae texto de descripcion, entonces escribelo */}
-          {descripcion && dataLog.id && <Card.Text>{descripcion}</Card.Text>}
+          {descripcion && dataLog.id && <Card.Text className="pDesc">{descripcion}</Card.Text>}
 
           {title && dataLog.id && (
             <div className="pCorazon">
