@@ -37,6 +37,16 @@ function Carrucel() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+      <Carousel.Item interval={1000}>
+      <img src="https://iili.io/JX1IW9j.jpg" className='carousel-image'/>
+        <Carousel.Caption>
+          <h3 className='text1'>Para Regalar</h3>
+          <p className='textp1'>
+            En ese momento especial.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      
 
     </Carousel>
   )
