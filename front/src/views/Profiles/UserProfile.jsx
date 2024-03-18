@@ -98,7 +98,7 @@ const UserProfile = () => {
           </div>
         </article>
       </section>
-      
+
       <section className="pBoxRegister">
         <RegisterForm userView={true} />
       </section>

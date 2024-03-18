@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { SoapContext } from "./../context/context.jsx";
 import { ADMINENDPOINT } from "./../context/config/constant.js";
 import axios from "axios";
+import { errorHandler, responseAlert } from "./Helpers/Alerts.jsx";
 
 const BanForm = () => {
   const { dataLog } = useContext(SoapContext);
@@ -43,9 +44,10 @@ const BanForm = () => {
           config
         );
         console.log(response.data.user);
+        responseAlert("Ban Hammer has fall")
       } catch (error) {
-        //mejorar el catch error
         console.log(error);
+        errorHandler(error)
       }
     };
     putAxios(data);

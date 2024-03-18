@@ -1,22 +1,19 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { ENDPOINT } from "./config/constant.js";
+import { errorHandler } from "../components/Helpers/Alerts.jsx";
 export const SoapContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const SoapProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalProducts, setTotalProducts] = useState();
-  const [dataLog,setDataLog] = useState({})
-
-
+  const [dataLog, setDataLog] = useState({});
 
   const getAxios = async () => {
     try {
-     await axios
-        .get(
-          ENDPOINT.products 
-        )
+      await axios
+        .get(ENDPOINT.products)
         .then((response) => {
           // console.log(response);
           setProducts(
@@ -25,12 +22,13 @@ const SoapProvider = ({ children }) => {
               add: false,
               detail: false,
               fav: false,
-              amount: 0,
+              amount: 0
             }))
           );
         })
         .catch((error) => {
           console.error("Error fetching products:", error);
+          errorHandler(error)
         });
     } catch (error) {
       console.log(error);

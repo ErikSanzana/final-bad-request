@@ -1,6 +1,14 @@
 // funciones de swal (que se llaman) como alerts
 import Swal from "sweetalert2";
-export { confirmBuy, forOrder, addUnit, lessUnit };
+export {
+  confirmBuy,
+  forOrder,
+  addUnit,
+  lessUnit,
+  loginresponse,
+  errorHandler,
+  responseAlert
+};
 
 const confirmBuy = () => {
   Swal.fire({
@@ -15,8 +23,8 @@ const confirmBuy = () => {
       container: "CustomCssContainter",
       popup: "CustomPopUpCss",
       closeButton: "CustomButtonCss",
-      confirmButton: "CustonButtonOnActionCss",
-    },
+      confirmButton: "CustonButtonOnActionCss"
+    }
   });
 };
 
@@ -31,8 +39,8 @@ const forOrder = () => {
     timer: 1500,
     color: "#00000",
     customClass: {
-      popup: "CustomPopUpCss",
-    },
+      popup: "CustomPopUpCss"
+    }
   });
 };
 
@@ -43,14 +51,14 @@ const addUnit = () => {
     position: "top-end",
     showConfirmButton: false,
     timer: 1500,
-    timerProgressBar: true,
+    timerProgressBar: true
   });
   Toast.fire({
     title: "añadiste un producto al carro ",
     color: "#00000",
     customClass: {
-      popup: "CustomPopUpCss",
-    },
+      popup: "CustomPopUpCss"
+    }
   });
 };
 
@@ -61,25 +69,46 @@ const lessUnit = () => {
     position: "top-end",
     showConfirmButton: false,
     timer: 1500,
-    timerProgressBar: true,
+    timerProgressBar: true
   });
   Toast.fire({
     title: "Eliministe un producto al carro",
     color: "#00000",
     customClass: {
-      popup: "CustomPopUpCss",
-    },
+      popup: "CustomPopUpCss"
+    }
   });
 };
 
+const loginresponse = () => {
+  //copiada y pegada, ajustar
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true
+  });
+  Toast.fire({
+    title: "Sesion INICIADA",
+    color: "#00000",
+    customClass: {
+      popup: "CustomPopUpCss"
+    }
+  });
+};
 
+const responseAlert = (text) => {
+  Swal.fire({ icon: "info", title: "MIRA!!!.", text: `${text}` });
+};
 
+const errorHandler = (error) => {
+  const warning = error.response.data;
 
+  Swal.fire({ icon: "error", title: "Oops...", text: `${warning.error}` });
+};
 
+export const logout = () => {
+  Swal.fire("Sesion cerrada!");
 
-
-
-
-
-
-
+}

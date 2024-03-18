@@ -8,6 +8,7 @@ import { ENDPOINT } from "../context/config/constant.js";
 import ButtonGoogle from "./BttnGoogle.jsx";
 import { useContext, useEffect } from "react";
 import { SoapContext } from "./../context/context.jsx";
+import { errorHandler, loginresponse } from "./Helpers/Alerts.jsx";
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -24,16 +25,13 @@ const LogIn = () => {
     try {
       const response = await axios.post(ENDPOINT.login, data);
       window.sessionStorage.setItem("data", JSON.stringify(response.data));
-      console.log("esto es win storage", window.sessionStorage);
-
-      window.alert("Usuario identificado con éxito 😀."); // alertswa2
+      loginresponse()
       setDataLog(response.data)
-
       navigate("/user");
     } catch (error) {
       console.error(error);
       console.log(error);
-      window.alert(`${error.message} 🙁.`); // alertswa2
+      errorHandler(error)
     }
   };
 

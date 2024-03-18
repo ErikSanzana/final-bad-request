@@ -11,6 +11,7 @@ import BanForm from "../../components/BanForm.jsx";
 
 import "./AdminProfile.css";
 import PostProduct from "../../components/ProductPost.jsx";
+import { responseAlert } from "../../components/Helpers/Alerts.jsx";
 
 const AdminProfile = () => {
   const { dataLog, setDataLog } = useContext(SoapContext);
@@ -31,6 +32,7 @@ const AdminProfile = () => {
         ADMINENDPOINT.users + `/users/${rut}`,
         config
       );
+      responseAlert("usuario encontrado")
       console.log(response);
       setUsers(response.data.user);
     } catch (error) {

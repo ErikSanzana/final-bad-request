@@ -3,10 +3,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { ADMINENDPOINT } from "../context/config/constant";
 import { useForm } from "react-hook-form";
+import { errorHandler, responseAlert } from "./Helpers/Alerts";
 
 const PostProduct = () => {
-
-
   const {
     register,
     handleSubmit,
@@ -19,19 +18,16 @@ const PostProduct = () => {
         data[key] = data[key].trim();
       }
     });
-    console.log(data)
+    console.log(data);
     try {
-      const response =  axios.post(ADMINENDPOINT.CProduct, data)
+      const response = axios.post(ADMINENDPOINT.CProduct, data);
 
-      window.alert("producto indexado con éxito 😀.");
-
+      responseAlert("Exito al postear");
     } catch (error) {
-      
       console.error(error);
-      window.alert(`${error.message} 🙁.`);
+      errorHandler(error);
     }
   };
-
 
   return (
     <Form noValidate onSubmit={handleSubmit(send)}>

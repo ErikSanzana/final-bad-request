@@ -9,6 +9,7 @@ import { ENDPOINT } from "../context/config/constant";
 import { useNavigate } from "react-router-dom";
 
 import "./RegisterForm.css";
+import { errorHandler, responseAlert } from "./Helpers/Alerts";
 
 const RegisterForm = ({
   userView = false,
@@ -35,55 +36,53 @@ const RegisterForm = ({
     const confirmPassword = document.getElementById("password2").value;
 
     if (password !== confirmPassword) {
-      window.alert("Las contraseñas no son iguales."); //swa2
+      responseAlert("las contraseñas no son iguales.");
       return;
     }
 
     console.log(data);
 
     if (userView == true) {
-      axios
-        .put(ENDPOINT.registarUsuario + `/${id}`, data)
-        .then(() => {
-          window.alert("Usuario editado con éxito 😀.");
-          navigate("/user");
-        })
-        .catch(({ response: { data } }) => {
-          console.error(data);
-          window.alert(`${data.message} 🙁.`);
-        });
+      try {
+        const response = axios.put(ENDPOINT.registarUsuario + `/${id}`, data);
+
+        responseAlert("edicion realizada");
+        navigate("/user");
+      } catch (error) {
+        errorHandler(error);
+      }
     }
 
     if (registerView == true) {
-      axios
-        .post(ENDPOINT.registarUsuario, data)
-        .then(() => {
-          window.alert("Usuario registrado con éxito 😀.");
-          navigate("/login");
-        })
-        .catch(({ response: { data } }) => {
-          console.error(data);
-          window.alert(`${data.message} 🙁.`);
-        });
+      try {
+        const response = axios.post(ENDPOINT.registarUsuario, data);
+        console.log(response);
+        responseAlert(`registrado exitosamente ${data.name}`);
+        navigate("/");
+      } catch (error) {
+        errorHandler(error);
+      }
     }
 
     if (adminView == true) {
-      axios
-        .put(ENDPOINT.registarUsuario + `/${id}`, data)
-        .then(() => {
-          window.alert("ADMIN editado con éxito 😀.");
-          navigate("/login");
-        })
-        .catch(({ response: { data } }) => {
-          console.error(data);
-          window.alert(`${data.message} 🙁.`);
-        });
+      try {
+        const response = axios.put(ENDPOINT.registarUsuario + `/${id}`, data);
+        console.log(response);
+        responseAlert("edicion completada");
+        navigate("/");
+      } catch (error) {
+        console.error(error);
+        errorHandler(error);
+      }
     }
   };
 
   return (
     <>
-      <Container fluid="xl" className={ registerView? "pPersonalContainer" : "pUpdateContainer"}>
+      <Container
+        fluid="xl"
+        className={registerView ? "pPersonalContainer" : "pUpdateContainer"}
+      >
         <div className="p-1 pFormReg">
           <Form noValidate onSubmit={handleSubmit(send)}>
             <Row className="mb-3">
@@ -164,7 +163,7 @@ const RegisterForm = ({
                   min="1900-01-01T00:00" // Formato adecuado para datetime-local
                   max="2024-12-31T23:59" // Formato adecuado para datetime-local
                   value="1901-01-01 00:00"
-                  autoComplete="section-red shipping birth_day"                
+                  autoComplete="section-red shipping birth_day"
                   {...register("birth_date")}
                 />{" "}
                 <br></br>
@@ -183,7 +182,6 @@ const RegisterForm = ({
                   aria-describedby="passwordHelpBlock"
                   placeholder="contraseña"
                   autoComplete="section-red shipping password"
-                
                   {...register("password")}
                 />
                 {userView || adminView ? null : (
@@ -203,7 +201,6 @@ const RegisterForm = ({
                   aria-describedby="passwordHelpBlock"
                   placeholder="repite contraseña "
                   autoComplete="section-red shipping password2"
-
                 />
               </Form.Group>
             </Row>
